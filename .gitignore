@@ -19,3 +19,7 @@ Thumbs.db
 
 ### Log ###
 *.log
+
+backup-before-overlay/
+.env
+*.log
