@@ -65,7 +65,7 @@ public class AccountServiceWhiteBoxTest {
         Account a=service.createAccount("Ali","PREMIUM",10.25); assertEquals("PREMIUM",a.getAccountType()); assertEquals(10.25,a.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-01; not yet executed
+    @Tag("hata") // H-01; verified by the local test run
     @DisplayName("WB-07: negativeInitialBalanceRejected")
     void negativeInitialBalanceRejected() {
         assertThrows(IllegalArgumentException.class, () -> service.createAccount("Ali","STANDARD",-0.01));
@@ -96,7 +96,7 @@ public class AccountServiceWhiteBoxTest {
         Account a=account(N,"STANDARD",100); assertThrows(IllegalArgumentException.class,()->service.deposit(N,-0.01)); assertEquals(100.0,a.getBalance(),0.001); verify(repository,never()).save(any(Account.class));
     }
     @Test
-    @Tag("hata") // H-02; not yet executed
+    @Tag("hata") // H-02; verified by the local test run
     @DisplayName("WB-13: zeroDepositRejected")
     void zeroDepositRejected() {
         account(N,"STANDARD",100); assertThrows(IllegalArgumentException.class,()->service.deposit(N,0.0));
@@ -152,7 +152,7 @@ public class AccountServiceWhiteBoxTest {
         Account a=account(N,"STANDARD",100); assertThrows(InsufficientBalanceException.class,()->service.withdraw(N,100.01)); assertEquals(100.0,a.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-03; not yet executed
+    @Tag("hata") // H-03; verified by the local test run
     @DisplayName("WB-24: fullBalanceWithdrawalAllowed")
     void fullBalanceWithdrawalAllowed() {
         Account a=account(N,"STANDARD",100); service.withdraw(N,100.0); assertEquals(0.0,a.getBalance(),0.001);
@@ -173,7 +173,7 @@ public class AccountServiceWhiteBoxTest {
         Account a=account(N,"PREMIUM",30000); when(transactions.getDailyWithdrawalTotal(N)).thenReturn(19999.99); assertThrows(LimitExceededException.class,()->service.withdraw(N,0.02)); assertEquals(30000.0,a.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-04; not yet executed
+    @Tag("hata") // H-04; verified by the local test run
     @DisplayName("WB-28: premiumDailyEqualityAllowed")
     void premiumDailyEqualityAllowed() {
         Account a=account(N,"PREMIUM",30000); when(transactions.getDailyWithdrawalTotal(N)).thenReturn(19999.99); service.withdraw(N,0.01); assertEquals(29999.99,a.getBalance(),0.001);
@@ -184,7 +184,7 @@ public class AccountServiceWhiteBoxTest {
         Account a=account(N,"PREMIUM",30000); when(transactions.getDailyWithdrawalTotal(N)).thenReturn(19000.0); service.withdraw(N,500.0); assertEquals(29500.0,a.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-10; not yet executed
+    @Tag("hata") // H-10; verified by the local test run
     @DisplayName("WB-30: frozenWithdrawalRejected")
     void frozenWithdrawalRejected() {
         Account a=account(N,"STANDARD",100); a.setStatus(AccountStatus.FROZEN); assertThrows(InvalidAccountStateException.class,()->service.withdraw(N,25.0)); assertEquals(100.0,a.getBalance(),0.001);
@@ -225,19 +225,19 @@ public class AccountServiceWhiteBoxTest {
         Account a=account(N,"STANDARD",0); a.setStatus(AccountStatus.CLOSED); Account b=account(M,"STANDARD",0); assertThrows(InvalidAccountStateException.class,()->service.transfer(N,M,1.0)); assertEquals(0.0,a.getBalance(),0.001); assertEquals(0.0,b.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-08; not yet executed
+    @Tag("hata") // H-08; verified by the local test run
     @DisplayName("WB-38: transferTargetFROZEN")
     void transferTargetFROZEN() {
         Account a=account(N,"STANDARD",100); Account b=account(M,"STANDARD",0); b.setStatus(AccountStatus.FROZEN); assertThrows(InvalidAccountStateException.class,()->service.transfer(N,M,25.0)); assertEquals(100.0,a.getBalance(),0.001); assertEquals(0.0,b.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-08; not yet executed
+    @Tag("hata") // H-08; verified by the local test run
     @DisplayName("WB-39: transferTargetCLOSED")
     void transferTargetCLOSED() {
         Account a=account(N,"STANDARD",100); Account b=account(M,"STANDARD",0); b.setStatus(AccountStatus.CLOSED); assertThrows(InvalidAccountStateException.class,()->service.transfer(N,M,25.0)); assertEquals(100.0,a.getBalance(),0.001); assertEquals(0.0,b.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-07; not yet executed
+    @Tag("hata") // H-07; verified by the local test run
     @DisplayName("WB-40: sameAccountTransferRejected")
     void sameAccountTransferRejected() {
         account(N,"STANDARD",100); assertThrows(IllegalArgumentException.class,()->service.transfer(N,N,25.0));
@@ -263,7 +263,7 @@ public class AccountServiceWhiteBoxTest {
         Account a=account(N,"STANDARD",0); a.setStatus(AccountStatus.CLOSED); assertThrows(InvalidAccountStateException.class,()->service.freezeAccount(N));
     }
     @Test
-    @Tag("hata") // H-06; not yet executed
+    @Tag("hata") // H-06; verified by the local test run
     @DisplayName("WB-45: freezeAlreadyFrozenRejected")
     void freezeAlreadyFrozenRejected() {
         Account a=account(N,"STANDARD",10); a.setStatus(AccountStatus.FROZEN); assertThrows(InvalidAccountStateException.class,()->service.freezeAccount(N));
@@ -299,25 +299,25 @@ public class AccountServiceWhiteBoxTest {
         Account a=account(N,"STANDARD",0); a.setStatus(AccountStatus.CLOSED); assertThrows(InvalidAccountStateException.class,()->service.closeAccount(N));
     }
     @Test
-    @Tag("hata") // H-05; not yet executed
+    @Tag("hata") // H-05; verified by the local test run
     @DisplayName("WB-52: closePositiveBalanceRejected")
     void closePositiveBalanceRejected() {
         Account a=account(N,"STANDARD",10); assertThrows(InvalidAccountStateException.class,()->service.closeAccount(N)); assertEquals(AccountStatus.ACTIVE,a.getStatus()); assertEquals(10.0,a.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-09; not yet executed
+    @Tag("hata") // H-09; verified by the local test run
     @DisplayName("WB-53: monthlyInterestWB53")
     void monthlyInterestWB53() {
         Account a=account(N,"STANDARD",1000); service.calculateInterest(N); assertEquals(1002.5,a.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-09; not yet executed
+    @Tag("hata") // H-09; verified by the local test run
     @DisplayName("WB-54: monthlyInterestWB54")
     void monthlyInterestWB54() {
         Account a=account(N,"PREMIUM",1000); service.calculateInterest(N); assertEquals(1004.17,a.getBalance(),0.001);
     }
     @Test
-    @Tag("hata") // H-09; not yet executed
+    @Tag("hata") // H-09; verified by the local test run
     @DisplayName("WB-55: monthlyInterestWB55")
     void monthlyInterestWB55() {
         Account a=account(N,"PREMIUM",2500.5); service.calculateInterest(N); assertEquals(2510.92,a.getBalance(),0.001);

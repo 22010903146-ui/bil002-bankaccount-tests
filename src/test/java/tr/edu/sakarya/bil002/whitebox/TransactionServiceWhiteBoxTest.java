@@ -54,7 +54,7 @@ public class TransactionServiceWhiteBoxTest {
         Transaction today=withdrawal(25.0,LocalDateTime.now());
         when(repository.findByAccountNumberAndTypeAndStatus("1234567890",TransactionType.WITHDRAWAL,
                 TransactionStatus.SUCCESS)).thenReturn(List.of(old,today));
-        // H-13, requirements §3/G-6. Real code returns 125; execution is pending.
+        // H-13, requirements §3/G-6. The actual local test returned 125 instead of 25.
         assertEquals(25.0,service.getDailyWithdrawalTotal("1234567890"),0.001);
     }
     private Transaction withdrawal(double amount,LocalDateTime timestamp) {

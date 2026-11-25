@@ -54,7 +54,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-01: source-confirmed; execution still required
+    @Tag("hata") // H-01: verified by the local test run
     @DisplayName("EP-08 | R-1.4 | Negatif başlangıç bakiyesi reddedilir")
     void ep_08() {
         BankApi.error(api.createBody("{\"ownerName\":\"Test\",\"accountType\":\"STANDARD\",\"initialBalance\":-0.01}"), 400);
@@ -91,7 +91,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-02: source-confirmed; execution still required
+    @Tag("hata") // H-02: verified by the local test run
     @DisplayName("BVA-04 | R-2.2 / R-3.2 | deposit tutarı 0")
     void bva_04() {
         String n = api.create("STANDARD", 100.0); api.rejected(n, "deposit", 0.0, 400);
@@ -158,7 +158,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-03: source-confirmed; execution still required
+    @Tag("hata") // H-03: verified by the local test run
     @DisplayName("BVA-15 | R-3.4 | Bakiyenin tamamı çekilebilir")
     void bva_15() {
         String n = api.create("STANDARD", 100.0); BankApi.code(api.operation(n, "withdraw", 100.0), 200); assertEquals(0.0, api.balance(n), 0.001);
@@ -181,7 +181,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-04: source-confirmed; execution still required
+    @Tag("hata") // H-04: verified by the local test run
     @DisplayName("BVA-18 | R-3.5 / §3 | PREMIUM: birikimli günlük limit tam sınır ve sınır üstü")
     void bva_18() {
         String n = api.create("PREMIUM", 20100.0);
@@ -210,14 +210,14 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-05: source-confirmed; execution still required
+    @Tag("hata") // H-05: verified by the local test run
     @DisplayName("ST-04 | §4.2 / R-5 / R-6 / R-7 | ACTIVE + close, bakiye=25")
     void st_04() {
         String n = api.create("STANDARD", 25.0); api.state(n, "ACTIVE"); api.rejectedTransition(n, "close"); assertEquals("ACTIVE", api.account(n).path("status").asText());
     }
 
     @Test
-    @Tag("hata") // H-06: source-confirmed; execution still required
+    @Tag("hata") // H-06: verified by the local test run
     @DisplayName("ST-05 | §4.2 / R-5 / R-6 / R-7 | FROZEN + freeze, bakiye=25")
     void st_05() {
         String n = api.create("STANDARD", 25.0); api.state(n, "FROZEN"); api.rejectedTransition(n, "freeze"); assertEquals("FROZEN", api.account(n).path("status").asText());
@@ -236,7 +236,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-05: source-confirmed; execution still required
+    @Tag("hata") // H-05: verified by the local test run
     @DisplayName("ST-08 | §4.2 / R-5 / R-6 / R-7 | FROZEN + close, bakiye=25")
     void st_08() {
         String n = api.create("STANDARD", 25.0); api.state(n, "FROZEN"); api.rejectedTransition(n, "close"); assertEquals("FROZEN", api.account(n).path("status").asText());
@@ -267,7 +267,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-07: source-confirmed; execution still required
+    @Tag("hata") // H-07: verified by the local test run
     @DisplayName("DT-02 | R-4.1–R-4.6 / G-5 | Transfer ACTIVE → ACTIVE; aynı=True; tutar=25")
     void dt_02() {
         String a = api.create("STANDARD", 100.0); String b = a; api.state(a, "ACTIVE"); api.rejectedTransfer(a, b, 25.0, 400);
@@ -292,14 +292,14 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-08: source-confirmed; execution still required
+    @Tag("hata") // H-08: verified by the local test run
     @DisplayName("DT-06 | R-4.1–R-4.6 / G-5 | Transfer ACTIVE → FROZEN; aynı=False; tutar=25")
     void dt_06() {
         String a = api.create("STANDARD", 100.0); String b = api.create("STANDARD", 0.0); api.state(a, "ACTIVE"); api.state(b, "FROZEN"); api.rejectedTransfer(a, b, 25.0, 409);
     }
 
     @Test
-    @Tag("hata") // H-08: source-confirmed; execution still required
+    @Tag("hata") // H-08: verified by the local test run
     @DisplayName("DT-07 | R-4.1–R-4.6 / G-5 | Transfer ACTIVE → CLOSED; aynı=False; tutar=25")
     void dt_07() {
         String a = api.create("STANDARD", 100.0); String b = api.create("STANDARD", 0.0); api.state(a, "ACTIVE"); api.state(b, "CLOSED"); api.rejectedTransfer(a, b, 25.0, 409);
@@ -330,7 +330,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-09: source-confirmed; execution still required
+    @Tag("hata") // H-09: verified by the local test run
     @DisplayName("INT-01 | R-8.2–R-8.5 | STANDARD, 1000 TL aylık faiz")
     void int_01() {
         String n = api.create("STANDARD", 1000.0);
@@ -343,7 +343,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-09: source-confirmed; execution still required
+    @Tag("hata") // H-09: verified by the local test run
     @DisplayName("INT-02 | R-8.2–R-8.5 | PREMIUM, 1000 TL aylık faiz")
     void int_02() {
         String n = api.create("PREMIUM", 1000.0);
@@ -368,7 +368,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-09: source-confirmed; execution still required
+    @Tag("hata") // H-09: verified by the local test run
     @DisplayName("INT-04 | R-8.2–R-8.5 | PREMIUM, 2500.5 TL aylık faiz")
     void int_04() {
         String n = api.create("PREMIUM", 2500.5);
@@ -399,7 +399,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-10: source-confirmed; execution still required
+    @Tag("hata") // H-10: verified by the local test run
     @DisplayName("ST-X02 | §4.3 | FROZEN hesapta withdraw engellenir")
     void st_x02() {
         String n=api.create("STANDARD", 100.0); api.state(n,"FROZEN"); api.rejected(n,"withdraw",1.0,409);
@@ -418,7 +418,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-10: source-confirmed; execution still required
+    @Tag("hata") // H-10: verified by the local test run
     @DisplayName("ST-X05 | §4.3 | CLOSED hesapta withdraw engellenir")
     void st_x05() {
         String n=api.create("STANDARD", 0.0); api.state(n,"CLOSED"); api.rejected(n,"withdraw",1.0,409);
@@ -449,7 +449,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-11: source-confirmed; execution still required
+    @Tag("hata") // H-11: verified by the local test run
     @DisplayName("HIS-02 | R-2.7 / R-3.8 / §6 | Reddedilen deposit FAILED olarak kaydedilir")
     void his_02() {
         String n=api.create("STANDARD",100.0); api.rejected(n,"deposit",-0.01,400);
@@ -461,7 +461,7 @@ public abstract class BlackBoxContract {
     }
 
     @Test
-    @Tag("hata") // H-11: source-confirmed; execution still required
+    @Tag("hata") // H-11: verified by the local test run
     @DisplayName("HIS-03 | R-2.7 / R-3.8 / §6 | Reddedilen withdraw FAILED olarak kaydedilir")
     void his_03() {
         String n=api.create("STANDARD",100.0); api.rejected(n,"withdraw",0.0,400);

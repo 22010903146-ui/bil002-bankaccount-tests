@@ -12,7 +12,7 @@ public abstract class EndpointContract {
     private final BankApi api;
     protected EndpointContract(BankApi api) { this.api = api; }
     @Test
-    @Tag("hata") // H-12: source-confirmed; execution still required
+    @Tag("hata") // H-12: verified by the local test run
     @DisplayName("API-01 | §7 / R-10.2 | Olmayan hesap: get")
     void api_01() {
         BankApi.error(api.send("GET","/api/accounts/0000000000",null),404);
