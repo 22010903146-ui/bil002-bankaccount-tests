@@ -306,10 +306,11 @@ Gerçek kanıt: `performans/sonuclar/live-20261125-163335/metrics.json`, `ledger
 
 ### 8. CI/CD
 
-Öğretmenin banka pipeline'ı byte/hash kontrolüyle korunmuştur.
-Yeni banka ve Selenium depolarının CI sonuçları yeniden yayınlama sonrasında bu bölüme eklenecektir.
+Banka GitHub Actions sonucu: **success**. [Run](https://github.com/22010903146-ui/bil002-bankaccount-tests/actions/runs/45759620100); test edilen commit: `a4dfc9b98f4b51e548923d1565dd7b5e50a9e178`.
 
-Önceki yayınlamaya ait sonuçlar arşivlenmiş yürütme kanıtlarıdır; güncel depo CI sonucu olarak değerlendirilmez.
+Selenium GitHub Actions sonucu: **success**. [Run](https://github.com/22010903146-ui/bil002-selenium-tests/actions/runs/45760073144); test edilen commit: `5a7a7d80c7661ced822fee4251c5d143ff37fdef`.
+
+Banka hata grubu, continue-on-error adımıyla ayrı raporlanır. Yeni CI kayıtları her projenin docs/execution/github-actions/ klasöründedir.
 
 ### 9. Bulunan Hatalar
 
@@ -404,7 +405,7 @@ resmi taşınabilir Temurin/Maven dağıtımları kullanıldı.
 
 `mvn test -Dheadless=true`: exit 0, 14 test, 0 failure, 0 error, 0 skipped.
 [Gerçek Cucumber HTML raporu](selenium-cucumber.html) ve [sonuç JSON](selenium-result.json).
-Yeni Selenium deposunun CI sonucu yeniden yayınlama sonrasında eklenecektir.
+Selenium GitHub Actions sonucu: **success**. [Run](https://github.com/22010903146-ui/bil002-selenium-tests/actions/runs/45760073144); test edilen commit: `5a7a7d80c7661ced822fee4251c5d143ff37fdef`.
 
 ## Kaynaklar
 
