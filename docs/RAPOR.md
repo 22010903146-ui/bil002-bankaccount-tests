@@ -296,6 +296,8 @@ JMX: `performans/bankaccount-yuk-testi.jmx`. Gerçek ölçüm 10110 deposit/bala
 örneğini kapsar; setup/teardown istekleri bu metriklerden ayrılır. P90 nearest-rank,
 throughput gerçek örnek penceresi (60.05 sn) üzerinden hesaplandı.
 
+JMeter panosundaki toplam 10113 örnek; hazırlık ve son ledger kontrolünü de içerir. Ledger doğrulamasının tek başarısızlığı nedeniyle panodaki toplam hata oranı %0,01 görünür. Yukarıdaki tablo yalnızca 10110 deposit/balance isteğini kapsar; bu iki işlemde HTTP hata oranı %0'dır.
+
 **H-14: yük altında bakiye tutarsızlığı gözlendi.** Başlangıç 0 TL; her yatırma 1 TL.
 5071 yatırma 200 yanıtıyla onaylandı; beklenen bakiye 5071 TL,
 son okuma 3587.0 TL. Belirsiz yatırma sayısı 0; ledger kontrolü **FAIL**.
@@ -307,6 +309,10 @@ Gerçek kanıt: `performans/sonuclar/live-20261125-163335/metrics.json`, `ledger
 `run.jtl`, `html/index.html`; örnek kimliği maskelenmiştir.
 
 ### 8. CI/CD
+
+[GitHub Actions hata grubu Summary ekranı](img/hata-summary.png).
+
+Summary 57 toplam ve 39 kırmızı sonuç gösterir. Şablonun özet hesabı atlanan testleri de toplamdan çıkarılan 18 sonuç içinde sayar; bu değer tek başına 18 çalıştırılmış başarılı test anlamına gelmez. Ayrıntılı durumlar Surefire XML kayıtlarında yer alır.
 
 [Bank CI ekran görüntüsü](img/bank-ci-success.png) · [Selenium CI ekran görüntüsü](img/selenium-ci-success.png).
 
