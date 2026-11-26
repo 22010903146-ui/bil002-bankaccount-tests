@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: io.cucumber.junit.platform.engine.CucumberTestEngine
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.178 s <<< FAILURE! -- in io.cucumber.junit.platform.engine.CucumberTestEngine
+Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples.Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples - Example #1.1 -- Time elapsed: 0.059 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1002.5> but was: <1002.0>
+	at tr.edu.sakarya.bil002.bdd.BankSteps.balance(BankSteps.java:35)
+	at ✽.the account balance is 1002.50 TL(file://WORKSPACE/bankaccount-ready/src/test/resources/features/faiz.feature:7)
+
+Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples.Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples - Example #1.2 -- Time elapsed: 0.020 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1004.17> but was: <1004.0>
+	at tr.edu.sakarya.bil002.bdd.BankSteps.balance(BankSteps.java:35)
+	at ✽.the account balance is 1004.17 TL(file://WORKSPACE/bankaccount-ready/src/test/resources/features/faiz.feature:7)
+
+İşlem geçmişi.İşlem geçmişi - Başarısız çekim FAILED olarak görünür -- Time elapsed: 0.020 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at tr.edu.sakarya.bil002.bdd.BankSteps.history(BankSteps.java:43)
+	at ✽.the transaction history has 1 entries(file://WORKSPACE/bankaccount-ready/src/test/resources/features/islem_gecmisi.feature:10)
+
+Para çekme kuralları.Para çekme kuralları - Bakiyenin tamamı çekilebilir -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.766919","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/7947319754/withdraw"} ==> expected: <200> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.code(BankSteps.java:33)
+	at ✽.the response code is 200(file://WORKSPACE/bankaccount-ready/src/test/resources/features/para_cekme.feature:6)
+
+Para yatırma kuralları.Para yatırma kuralları - Sıfır tutar yatırma reddedilir -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"id":24,"accountNumber":"5059916566","ownerName":"Test-0270e6fe-ec89-49b9-8a44-4cd03410423f","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.776701","updatedAt":"2026-11-25T15:25:16.776701"} ==> expected: <400> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.code(BankSteps.java:33)
+	at ✽.the response code is 400(file://WORKSPACE/bankaccount-ready/src/test/resources/features/para_yatirma.feature:17)
+

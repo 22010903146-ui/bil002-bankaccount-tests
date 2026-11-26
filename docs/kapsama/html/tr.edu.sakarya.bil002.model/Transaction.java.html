@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Transaction.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bankaccount-api</a> &gt; <a href="index.source.html" class="el_package">tr.edu.sakarya.bil002.model</a> &gt; <span class="el_source">Transaction.java</span></div><h1>Transaction.java</h1><pre class="source lang-java linenums">package tr.edu.sakarya.bil002.model;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = &quot;transactions&quot;)
+public class Transaction {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 10)
+    private String accountNumber;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TransactionType type;
+
+    @Column(nullable = false)
+    private Double amount;
+
+    private Double balanceAfter;
+
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TransactionStatus status;
+
+    private LocalDateTime timestamp;
+
+<span class="fc" id="L43">    public Transaction() {</span>
+<span class="fc" id="L44">    }</span>
+
+    public Transaction(String accountNumber, TransactionType type, Double amount, Double balanceAfter,
+<span class="fc" id="L47">                       String description, TransactionStatus status) {</span>
+<span class="fc" id="L48">        this.accountNumber = accountNumber;</span>
+<span class="fc" id="L49">        this.type = type;</span>
+<span class="fc" id="L50">        this.amount = amount;</span>
+<span class="fc" id="L51">        this.balanceAfter = balanceAfter;</span>
+<span class="fc" id="L52">        this.description = description;</span>
+<span class="fc" id="L53">        this.status = status;</span>
+<span class="fc" id="L54">    }</span>
+
+    @PrePersist
+    void onCreate() {
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (this.timestamp == null) {</span>
+<span class="fc" id="L59">            this.timestamp = LocalDateTime.now();</span>
+        }
+<span class="fc" id="L61">    }</span>
+
+    public Long getId() {
+<span class="fc" id="L64">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L68">        this.id = id;</span>
+<span class="nc" id="L69">    }</span>
+
+    public String getAccountNumber() {
+<span class="fc" id="L72">        return accountNumber;</span>
+    }
+
+    public void setAccountNumber(String accountNumber) {
+<span class="nc" id="L76">        this.accountNumber = accountNumber;</span>
+<span class="nc" id="L77">    }</span>
+
+    public TransactionType getType() {
+<span class="fc" id="L80">        return type;</span>
+    }
+
+    public void setType(TransactionType type) {
+<span class="nc" id="L84">        this.type = type;</span>
+<span class="nc" id="L85">    }</span>
+
+    public Double getAmount() {
+<span class="fc" id="L88">        return amount;</span>
+    }
+
+    public void setAmount(Double amount) {
+<span class="nc" id="L92">        this.amount = amount;</span>
+<span class="nc" id="L93">    }</span>
+
+    public Double getBalanceAfter() {
+<span class="fc" id="L96">        return balanceAfter;</span>
+    }
+
+    public void setBalanceAfter(Double balanceAfter) {
+<span class="nc" id="L100">        this.balanceAfter = balanceAfter;</span>
+<span class="nc" id="L101">    }</span>
+
+    public String getDescription() {
+<span class="fc" id="L104">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="nc" id="L108">        this.description = description;</span>
+<span class="nc" id="L109">    }</span>
+
+    public TransactionStatus getStatus() {
+<span class="fc" id="L112">        return status;</span>
+    }
+
+    public void setStatus(TransactionStatus status) {
+<span class="nc" id="L116">        this.status = status;</span>
+<span class="nc" id="L117">    }</span>
+
+    public LocalDateTime getTimestamp() {
+<span class="fc" id="L120">        return timestamp;</span>
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+<span class="fc" id="L124">        this.timestamp = timestamp;</span>
+<span class="fc" id="L125">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

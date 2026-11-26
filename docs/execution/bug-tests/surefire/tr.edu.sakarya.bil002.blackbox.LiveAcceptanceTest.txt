@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tr.edu.sakarya.bil002.blackbox.LiveAcceptanceTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 17, Time elapsed: 0 s -- in tr.edu.sakarya.bil002.blackbox.LiveAcceptanceTest

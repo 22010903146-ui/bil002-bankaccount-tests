@@ -1,0 +1,163 @@
+{
+  "conclusion": "success",
+  "headSha": "c0bf0c3ed5d42d4c93144421bc5ff69d3c2e4796",
+  "jobs": [
+    {
+      "completedAt": "2026-11-25T14:02:33Z",
+      "conclusion": "success",
+      "databaseId": 139258826260,
+      "name": "test-and-report",
+      "startedAt": "2026-11-25T14:01:37Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-25T14:01:39Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-25T14:01:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:01:40Z",
+          "conclusion": "success",
+          "name": "Kodu \u00e7ek (checkout)",
+          "number": 2,
+          "startedAt": "2026-11-25T14:01:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:01:40Z",
+          "conclusion": "success",
+          "name": "Java 17 kurulumu (Temurin)",
+          "number": 3,
+          "startedAt": "2026-11-25T14:01:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:01:41Z",
+          "conclusion": "success",
+          "name": "Maven ba\u011f\u0131ml\u0131l\u0131klar\u0131n\u0131 cache'le",
+          "number": 4,
+          "startedAt": "2026-11-25T14:01:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:01:46Z",
+          "conclusion": "success",
+          "name": "Checkstyle kontrol\u00fc",
+          "number": 5,
+          "startedAt": "2026-11-25T14:01:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:01:50Z",
+          "conclusion": "success",
+          "name": "Derleme",
+          "number": 6,
+          "startedAt": "2026-11-25T14:01:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:10Z",
+          "conclusion": "success",
+          "name": "Testleri \u00e7al\u0131\u015ft\u0131r",
+          "number": 7,
+          "startedAt": "2026-11-25T14:01:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:10Z",
+          "conclusion": "success",
+          "name": "Test sonu\u00e7lar\u0131n\u0131 ay\u0131r",
+          "number": 8,
+          "startedAt": "2026-11-25T14:02:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:25Z",
+          "conclusion": "success",
+          "name": "Bulunan hata testlerini \u00e7al\u0131\u015ft\u0131r (@hata)",
+          "number": 9,
+          "startedAt": "2026-11-25T14:02:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:26Z",
+          "conclusion": "success",
+          "name": "Bulunan hata testlerinin \u00f6zeti",
+          "number": 10,
+          "startedAt": "2026-11-25T14:02:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:28Z",
+          "conclusion": "success",
+          "name": "JaCoCo raporu \u00fcret",
+          "number": 11,
+          "startedAt": "2026-11-25T14:02:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:29Z",
+          "conclusion": "success",
+          "name": "JaCoCo raporunu y\u00fckle",
+          "number": 12,
+          "startedAt": "2026-11-25T14:02:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:30Z",
+          "conclusion": "success",
+          "name": "Test sonu\u00e7lar\u0131n\u0131 (Surefire XML) y\u00fckle",
+          "number": 13,
+          "startedAt": "2026-11-25T14:02:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:31Z",
+          "conclusion": "success",
+          "name": "Checkstyle raporunu y\u00fckle",
+          "number": 14,
+          "startedAt": "2026-11-25T14:02:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:31Z",
+          "conclusion": "success",
+          "name": "Post Maven ba\u011f\u0131ml\u0131l\u0131klar\u0131n\u0131 cache'le",
+          "number": 26,
+          "startedAt": "2026-11-25T14:02:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:31Z",
+          "conclusion": "success",
+          "name": "Post Java 17 kurulumu (Temurin)",
+          "number": 27,
+          "startedAt": "2026-11-25T14:02:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:31Z",
+          "conclusion": "success",
+          "name": "Post Kodu \u00e7ek (checkout)",
+          "number": 28,
+          "startedAt": "2026-11-25T14:02:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-25T14:02:31Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 29,
+          "startedAt": "2026-11-25T14:02:31Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/22010903146-ui/bil002-bankaccount-tests/actions/runs/45629578161/job/139258826260"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/22010903146-ui/bil002-bankaccount-tests/actions/runs/45629578161"
+}

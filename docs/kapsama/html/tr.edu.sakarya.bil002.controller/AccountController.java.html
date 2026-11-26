@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bankaccount-api</a> &gt; <a href="index.source.html" class="el_package">tr.edu.sakarya.bil002.controller</a> &gt; <span class="el_source">AccountController.java</span></div><h1>AccountController.java</h1><pre class="source lang-java linenums">package tr.edu.sakarya.bil002.controller;
+
+import java.util.List;
+
+import jakarta.validation.Valid;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import tr.edu.sakarya.bil002.dto.AccountCreateRequest;
+import tr.edu.sakarya.bil002.dto.DepositRequest;
+import tr.edu.sakarya.bil002.dto.WithdrawRequest;
+import tr.edu.sakarya.bil002.model.Account;
+import tr.edu.sakarya.bil002.model.Transaction;
+import tr.edu.sakarya.bil002.service.AccountService;
+
+@RestController
+@RequestMapping(value = &quot;/api/accounts&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+public class AccountController {
+
+    private final AccountService accountService;
+
+<span class="fc" id="L30">    public AccountController(AccountService accountService) {</span>
+<span class="fc" id="L31">        this.accountService = accountService;</span>
+<span class="fc" id="L32">    }</span>
+
+    @PostMapping
+    public ResponseEntity&lt;Account&gt; createAccount(@RequestBody AccountCreateRequest request) {
+<span class="fc" id="L36">        Account account = accountService.createAccount(request.getOwnerName(), request.getAccountType(),</span>
+<span class="fc" id="L37">                request.getInitialBalance());</span>
+<span class="fc" id="L38">        return ResponseEntity.status(HttpStatus.CREATED).body(account);</span>
+    }
+
+    @GetMapping
+    public ResponseEntity&lt;List&lt;Account&gt;&gt; getAllAccounts() {
+<span class="fc" id="L43">        return ResponseEntity.ok(accountService.getAllAccounts());</span>
+    }
+
+    @GetMapping(&quot;/{accountNumber}&quot;)
+    public ResponseEntity&lt;Account&gt; getAccount(@PathVariable String accountNumber) {
+<span class="fc" id="L48">        return accountService.findAccount(accountNumber)</span>
+<span class="fc" id="L49">                .map(ResponseEntity::ok)</span>
+<span class="fc" id="L50">                .orElse(ResponseEntity.ok(null));</span>
+    }
+
+    @PostMapping(&quot;/{accountNumber}/deposit&quot;)
+    public ResponseEntity&lt;Account&gt; deposit(@PathVariable String accountNumber,
+                                           @Valid @RequestBody DepositRequest request) {
+<span class="fc" id="L56">        return ResponseEntity.ok(accountService.deposit(accountNumber, request.getAmount()));</span>
+    }
+
+    @PostMapping(&quot;/{accountNumber}/withdraw&quot;)
+    public ResponseEntity&lt;Account&gt; withdraw(@PathVariable String accountNumber,
+                                            @Valid @RequestBody WithdrawRequest request) {
+<span class="fc" id="L62">        return ResponseEntity.ok(accountService.withdraw(accountNumber, request.getAmount()));</span>
+    }
+
+    @PostMapping(&quot;/{accountNumber}/freeze&quot;)
+    public ResponseEntity&lt;Account&gt; freeze(@PathVariable String accountNumber) {
+<span class="fc" id="L67">        return ResponseEntity.ok(accountService.freezeAccount(accountNumber));</span>
+    }
+
+    @PostMapping(&quot;/{accountNumber}/unfreeze&quot;)
+    public ResponseEntity&lt;Account&gt; unfreeze(@PathVariable String accountNumber) {
+<span class="fc" id="L72">        return ResponseEntity.ok(accountService.unfreezeAccount(accountNumber));</span>
+    }
+
+    @PostMapping(&quot;/{accountNumber}/close&quot;)
+    public ResponseEntity&lt;Account&gt; close(@PathVariable String accountNumber) {
+<span class="fc" id="L77">        return ResponseEntity.ok(accountService.closeAccount(accountNumber));</span>
+    }
+
+    @PostMapping(&quot;/{accountNumber}/interest&quot;)
+    public ResponseEntity&lt;Account&gt; applyInterest(@PathVariable String accountNumber) {
+<span class="fc" id="L82">        return ResponseEntity.ok(accountService.calculateInterest(accountNumber));</span>
+    }
+
+    @GetMapping(&quot;/{accountNumber}/transactions&quot;)
+    public ResponseEntity&lt;List&lt;Transaction&gt;&gt; getTransactions(@PathVariable String accountNumber) {
+<span class="fc" id="L87">        return ResponseEntity.ok(accountService.getTransactionHistory(accountNumber));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,3741 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< tr.edu.sakarya.bil002:bankaccount-api >----------------
+[INFO] Building bankaccount-api 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ bankaccount-api ---
+[INFO] argLine set to -javaagent:WORKSPACE/work/maven-cache/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=WORKSPACE/bankaccount-ready/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bankaccount-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bankaccount-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bankaccount-api ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bankaccount-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ bankaccount-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+Nov 25, 2026 3:25:01 PM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+
+This is a work around for the limited JUnit 5 support in Maven and Gradle. Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors. For details see: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+If you are using the JUnit 5 Suite Engine, Platform Launcher API or Console Launcher you should not use this property. Please consult the JUnit 5 documentation on test selection.
+[INFO] Running tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest
+15:25:13.014 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Para çekildi: hesap=1234567890, tutar=25.0
+15:25:13.019 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Transfer tamamlandı: 1234567890 -> 2234567890, tutar=25.0
+15:25:13.020 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Transfer tamamlandı: 1234567890 -> 2234567890, tutar=25.0
+15:25:13.023 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Para yatırıldı: hesap=1234567890, tutar=0.0
+15:25:13.024 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap donduruldu: 1234567890
+15:25:13.025 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap oluşturuldu: 9413574224 (STANDARD)
+15:25:13.026 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap kapatıldı: 1234567890
+15:25:13.028 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Faiz uygulandı: hesap=1234567890, faiz=2.0
+15:25:13.031 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Faiz uygulandı: hesap=1234567890, faiz=4.0
+15:25:13.032 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Faiz uygulandı: hesap=1234567890, faiz=10.0
+15:25:13.034 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Transfer tamamlandı: 1234567890 -> 1234567890, tutar=25.0
+[ERROR] Tests run: 13, Failures: 11, Errors: 2, Skipped: 0, Time elapsed: 11.10 s <<< FAILURE! -- in tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.premiumDailyEqualityAllowed -- Time elapsed: 11.07 s <<< ERROR!
+tr.edu.sakarya.bil002.exception.LimitExceededException: Günlük çekim limiti aşıldı: 20000.0 TL
+	at tr.edu.sakarya.bil002.service.AccountService.checkDailyWithdrawalLimit(AccountService.java:217)
+	at tr.edu.sakarya.bil002.service.AccountService.withdraw(AccountService.java:99)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.premiumDailyEqualityAllowed(AccountServiceWhiteBoxTest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.frozenWithdrawalRejected -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.frozenWithdrawalRejected(AccountServiceWhiteBoxTest.java:190)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetCLOSED -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetCLOSED(AccountServiceWhiteBoxTest.java:237)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetFROZEN -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetFROZEN(AccountServiceWhiteBoxTest.java:231)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.fullBalanceWithdrawalAllowed -- Time elapsed: 0.001 s <<< ERROR!
+tr.edu.sakarya.bil002.exception.InsufficientBalanceException: Yetersiz bakiye
+	at tr.edu.sakarya.bil002.service.AccountService.ensureSufficientBalance(AccountService.java:201)
+	at tr.edu.sakarya.bil002.service.AccountService.withdraw(AccountService.java:98)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.fullBalanceWithdrawalAllowed(AccountServiceWhiteBoxTest.java:158)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.zeroDepositRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.zeroDepositRejected(AccountServiceWhiteBoxTest.java:102)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.freezeAlreadyFrozenRejected -- Time elapsed: 0 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.freezeAlreadyFrozenRejected(AccountServiceWhiteBoxTest.java:269)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.negativeInitialBalanceRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.negativeInitialBalanceRejected(AccountServiceWhiteBoxTest.java:71)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.closePositiveBalanceRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.closePositiveBalanceRejected(AccountServiceWhiteBoxTest.java:305)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB53 -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1002.5> but was: <1002.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB53(AccountServiceWhiteBoxTest.java:311)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB54 -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1004.17> but was: <1004.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB54(AccountServiceWhiteBoxTest.java:317)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB55 -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2510.92> but was: <2510.5>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB55(AccountServiceWhiteBoxTest.java:323)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.sameAccountTransferRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.sameAccountTransferRejected(AccountServiceWhiteBoxTest.java:243)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running tr.edu.sakarya.bil002.whitebox.TransactionServiceWhiteBoxTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.031 s <<< FAILURE! -- in tr.edu.sakarya.bil002.whitebox.TransactionServiceWhiteBoxTest
+[ERROR] tr.edu.sakarya.bil002.whitebox.TransactionServiceWhiteBoxTest.previousDayWithdrawalsMustNotConsumeTodaysLimit -- Time elapsed: 0.031 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <25.0> but was: <125.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.whitebox.TransactionServiceWhiteBoxTest.previousDayWithdrawalsMustNotConsumeTodaysLimit(TransactionServiceWhiteBoxTest.java:58)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest
+15:25:13.146 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest]: HistoryRepositoryIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:25:13.221 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-11-25T15:25:13.462+03:00  INFO 40565 --- [bankaccount-api] [           main] e.s.b.i.HistoryRepositoryIntegrationTest : Starting HistoryRepositoryIntegrationTest using Java 17.0.21.1 with PID 40565 (started by abdulrahman in WORKSPACE/bankaccount-ready)
+2026-11-25T15:25:13.463+03:00  INFO 40565 --- [bankaccount-api] [           main] e.s.b.i.HistoryRepositoryIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T15:25:13.824+03:00  INFO 40565 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-25T15:25:13.855+03:00  INFO 40565 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 2 JPA repository interfaces.
+2026-11-25T15:25:14.095+03:00  INFO 40565 --- [bankaccount-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-25T15:25:14.138+03:00  INFO 40565 --- [bankaccount-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-11-25T15:25:14.163+03:00  INFO 40565 --- [bankaccount-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-25T15:25:14.266+03:00  INFO 40565 --- [bankaccount-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-25T15:25:14.287+03:00  INFO 40565 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-25T15:25:14.468+03:00  INFO 40565 --- [bankaccount-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bankdb user=SA
+2026-11-25T15:25:14.469+03:00  INFO 40565 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-25T15:25:15.027+03:00  INFO 40565 --- [bankaccount-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-25T15:25:15.050+03:00  INFO 40565 --- [bankaccount-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25T15:25:15.551+03:00  INFO 40565 --- [bankaccount-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bankdb'
+2026-11-25T15:25:15.578+03:00  INFO 40565 --- [bankaccount-api] [           main] e.s.b.i.HistoryRepositoryIntegrationTest : Started HistoryRepositoryIntegrationTest in 2.262 seconds (process running for 14.334)
+2026-11-25T15:25:15.645+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4478749309 (STANDARD)
+2026-11-25T15:25:15.755+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4234781610 (STANDARD)
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.690 s <<< FAILURE! -- in tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest
+[ERROR] tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest.dailyTotalExcludesPreviousCalendarDay -- Time elapsed: 0.166 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <25.0> but was: <125.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest.dailyTotalExcludesPreviousCalendarDay(HistoryRepositoryIntegrationTest.java:40)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest.rejectedWithdrawalMustHaveFailedHistoryRecord -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest.rejectedWithdrawalMustHaveFailedHistoryRecord(HistoryRepositoryIntegrationTest.java:47)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+2026-11-25T15:25:15.765+03:00  INFO 40565 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest]: AccountControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:25:15.769+03:00  INFO 40565 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-11-25T15:25:15.782+03:00  INFO 40565 --- [bankaccount-api] [           main] e.s.b.i.AccountControllerIntegrationTest : Starting AccountControllerIntegrationTest using Java 17.0.21.1 with PID 40565 (started by abdulrahman in WORKSPACE/bankaccount-ready)
+2026-11-25T15:25:15.782+03:00  INFO 40565 --- [bankaccount-api] [           main] e.s.b.i.AccountControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T15:25:15.847+03:00  INFO 40565 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-25T15:25:15.853+03:00  INFO 40565 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-25T15:25:15.898+03:00  INFO 40565 --- [bankaccount-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-25T15:25:15.899+03:00  INFO 40565 --- [bankaccount-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-25T15:25:15.904+03:00  INFO 40565 --- [bankaccount-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-25T15:25:15.904+03:00  INFO 40565 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-25T15:25:15.905+03:00  INFO 40565 --- [bankaccount-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:bankdb user=SA
+2026-11-25T15:25:15.905+03:00  INFO 40565 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-25T15:25:15.941+03:00  INFO 40565 --- [bankaccount-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-25T15:25:15.945+03:00  INFO 40565 --- [bankaccount-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25T15:25:16.034+03:00  INFO 40565 --- [bankaccount-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bankdb'
+2026-11-25T15:25:16.051+03:00  INFO 40565 --- [bankaccount-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-25T15:25:16.051+03:00  INFO 40565 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-25T15:25:16.052+03:00  INFO 40565 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-25T15:25:16.057+03:00  INFO 40565 --- [bankaccount-api] [           main] e.s.b.i.AccountControllerIntegrationTest : Started AccountControllerIntegrationTest in 0.286 seconds (process running for 14.813)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/0000000000
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.363 s <<< FAILURE! -- in tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+[ERROR] tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest.api_01 -- Time elapsed: 0.068 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: null ==> expected: <404> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+	at tr.edu.sakarya.bil002.integration.EndpointContract.api_01(EndpointContract.java:18)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running tr.edu.sakarya.bil002.blackbox.LiveAcceptanceTest
+[WARNING] Tests run: 17, Failures: 0, Errors: 0, Skipped: 17, Time elapsed: 0 s -- in tr.edu.sakarya.bil002.blackbox.LiveAcceptanceTest
+[INFO] Running tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+2026-11-25T15:25:16.133+03:00  INFO 40565 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest]: AccountServiceBlackBoxTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:25:16.138+03:00  INFO 40565 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+2026-11-25T15:25:16.170+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6750763603 (STANDARD)
+2026-11-25T15:25:16.201+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=6750763603, tip=DEPOSIT, tutar=0.0
+2026-11-25T15:25:16.201+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=6750763603, tutar=0.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/6750763603
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/6750763603/deposit
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"14"]
+             Body = {"amount":0.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#deposit(String, DepositRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/6750763603
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.210+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3024079048 (STANDARD)
+2026-11-25T15:25:16.216+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/3024079048/withdraw -> Yetersiz bakiye
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-699b1b2d-9ef5-4883-8cb1-2595b03b3f17","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":2,"accountNumber":"3024079048","ownerName":"Test-699b1b2d-9ef5-4883-8cb1-2595b03b3f17","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.209976","updatedAt":"2026-11-25T15:25:16.209976"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/3024079048/withdraw
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"16"]
+             Body = {"amount":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#withdraw(String, WithdrawRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = tr.edu.sakarya.bil002.exception.InsufficientBalanceException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 422
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"timestamp":"2026-11-25T15:25:16.21648","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/3024079048/withdraw"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.223+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1378541277 (PREMIUM)
+2026-11-25T15:25:16.228+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1378541277, tip=WITHDRAWAL, tutar=19999.99
+2026-11-25T15:25:16.228+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=1378541277, tutar=19999.99
+2026-11-25T15:25:16.238+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/1378541277/withdraw -> Günlük çekim limiti aşıldı: 20000.0 TL
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"106"]
+             Body = {"ownerName":"Test-63872940-d182-452a-82fe-c5683e8debd3","accountType":"PREMIUM","initialBalance":20100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":3,"accountNumber":"1378541277","ownerName":"Test-63872940-d182-452a-82fe-c5683e8debd3","balance":20100.0,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.222789","updatedAt":"2026-11-25T15:25:16.222789"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/1378541277/withdraw
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"19"]
+             Body = {"amount":19999.99}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#withdraw(String, WithdrawRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":3,"accountNumber":"1378541277","ownerName":"Test-63872940-d182-452a-82fe-c5683e8debd3","balance":100.0099999999984,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.222789","updatedAt":"2026-11-25T15:25:16.228259"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/1378541277/withdraw
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"15"]
+             Body = {"amount":0.01}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#withdraw(String, WithdrawRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = tr.edu.sakarya.bil002.exception.LimitExceededException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 422
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"timestamp":"2026-11-25T15:25:16.238374","status":422,"error":"Unprocessable Entity","message":"Günlük çekim limiti aşıldı: 20000.0 TL","path":"/api/accounts/1378541277/withdraw"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.243+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2176012089 (STANDARD)
+2026-11-25T15:25:16.248+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts/2176012089/deposit -> Yatırılacak tutar sıfırdan büyük olmalıdır
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-2f4e241c-fb08-4b18-a869-8312b003e57b","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":4,"accountNumber":"2176012089","ownerName":"Test-2f4e241c-fb08-4b18-a869-8312b003e57b","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.242461","updatedAt":"2026-11-25T15:25:16.242461"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/2176012089
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":4,"accountNumber":"2176012089","ownerName":"Test-2f4e241c-fb08-4b18-a869-8312b003e57b","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.242461","updatedAt":"2026-11-25T15:25:16.242461"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/2176012089/deposit
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"16"]
+             Body = {"amount":-0.01}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#deposit(String, DepositRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = java.lang.IllegalArgumentException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"timestamp":"2026-11-25T15:25:16.248204","status":400,"error":"Bad Request","message":"Yatırılacak tutar sıfırdan büyük olmalıdır","path":"/api/accounts/2176012089/deposit"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/2176012089
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":4,"accountNumber":"2176012089","ownerName":"Test-2f4e241c-fb08-4b18-a869-8312b003e57b","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.242461","updatedAt":"2026-11-25T15:25:16.242461"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/2176012089/transactions
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getTransactions(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = []
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.258+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4147181589 (STANDARD)
+2026-11-25T15:25:16.262+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts/4147181589/withdraw -> Çekilecek tutar sıfırdan büyük olmalıdır
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-f051023a-b4bd-43f8-985f-afd14ea0a133","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":5,"accountNumber":"4147181589","ownerName":"Test-f051023a-b4bd-43f8-985f-afd14ea0a133","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.257942","updatedAt":"2026-11-25T15:25:16.257942"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/4147181589
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":5,"accountNumber":"4147181589","ownerName":"Test-f051023a-b4bd-43f8-985f-afd14ea0a133","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.257942","updatedAt":"2026-11-25T15:25:16.257942"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/4147181589/withdraw
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"14"]
+             Body = {"amount":0.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#withdraw(String, WithdrawRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = java.lang.IllegalArgumentException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"timestamp":"2026-11-25T15:25:16.26289","status":400,"error":"Bad Request","message":"Çekilecek tutar sıfırdan büyük olmalıdır","path":"/api/accounts/4147181589/withdraw"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/4147181589
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":5,"accountNumber":"4147181589","ownerName":"Test-f051023a-b4bd-43f8-985f-afd14ea0a133","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.257942","updatedAt":"2026-11-25T15:25:16.257942"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/4147181589/transactions
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getTransactions(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = []
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.271+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3685384942 (STANDARD)
+2026-11-25T15:25:16.274+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=3685384942, tip=INTEREST, tutar=2.0
+2026-11-25T15:25:16.274+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Faiz uygulandı: hesap=3685384942, faiz=2.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"106"]
+             Body = {"ownerName":"Test-b92301f9-b331-4cdf-a095-17a488e8b135","accountType":"STANDARD","initialBalance":1000.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":6,"accountNumber":"3685384942","ownerName":"Test-b92301f9-b331-4cdf-a095-17a488e8b135","balance":1000.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.271066","updatedAt":"2026-11-25T15:25:16.271066"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/3685384942/interest
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#applyInterest(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":6,"accountNumber":"3685384942","ownerName":"Test-b92301f9-b331-4cdf-a095-17a488e8b135","balance":1002.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.271066","updatedAt":"2026-11-25T15:25:16.274567"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/3685384942
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":6,"accountNumber":"3685384942","ownerName":"Test-b92301f9-b331-4cdf-a095-17a488e8b135","balance":1002.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.271066","updatedAt":"2026-11-25T15:25:16.274567"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.287+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8105607397 (PREMIUM)
+2026-11-25T15:25:16.290+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=8105607397, tip=INTEREST, tutar=4.0
+2026-11-25T15:25:16.290+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Faiz uygulandı: hesap=8105607397, faiz=4.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-38207cc9-1d55-4226-a990-7b32d107c1fd","accountType":"PREMIUM","initialBalance":1000.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":7,"accountNumber":"8105607397","ownerName":"Test-38207cc9-1d55-4226-a990-7b32d107c1fd","balance":1000.0,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.286438","updatedAt":"2026-11-25T15:25:16.286438"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/8105607397/interest
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#applyInterest(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":7,"accountNumber":"8105607397","ownerName":"Test-38207cc9-1d55-4226-a990-7b32d107c1fd","balance":1004.0,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.286438","updatedAt":"2026-11-25T15:25:16.290434"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/8105607397
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":7,"accountNumber":"8105607397","ownerName":"Test-38207cc9-1d55-4226-a990-7b32d107c1fd","balance":1004.0,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.286438","updatedAt":"2026-11-25T15:25:16.290434"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.296+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6759979473 (PREMIUM)
+2026-11-25T15:25:16.299+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=6759979473, tip=INTEREST, tutar=10.0
+2026-11-25T15:25:16.299+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Faiz uygulandı: hesap=6759979473, faiz=10.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-cc10fb2f-e6f7-41e9-a047-a721111541f8","accountType":"PREMIUM","initialBalance":2500.5}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":8,"accountNumber":"6759979473","ownerName":"Test-cc10fb2f-e6f7-41e9-a047-a721111541f8","balance":2500.5,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.296234","updatedAt":"2026-11-25T15:25:16.296234"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/6759979473/interest
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#applyInterest(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":8,"accountNumber":"6759979473","ownerName":"Test-cc10fb2f-e6f7-41e9-a047-a721111541f8","balance":2510.5,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.296234","updatedAt":"2026-11-25T15:25:16.299698"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/6759979473
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":8,"accountNumber":"6759979473","ownerName":"Test-cc10fb2f-e6f7-41e9-a047-a721111541f8","balance":2510.5,"status":"ACTIVE","accountType":"PREMIUM","createdAt":"2026-11-25T15:25:16.296234","updatedAt":"2026-11-25T15:25:16.299698"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.305+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1886811407 (STANDARD)
+2026-11-25T15:25:16.307+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 1886811407
+2026-11-25T15:25:16.312+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1886811407, tip=WITHDRAWAL, tutar=1.0
+2026-11-25T15:25:16.312+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=1886811407, tutar=1.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.305189"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/1886811407/freeze
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#freeze(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":100.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.307632"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/1886811407
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":100.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.307632"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/1886811407/withdraw
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"14"]
+             Body = {"amount":1.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#withdraw(String, WithdrawRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":99.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.312575"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/1886811407
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":99.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.312575"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.318+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8751125319 (STANDARD)
+2026-11-25T15:25:16.320+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 8751125319
+2026-11-25T15:25:16.324+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/8751125319/withdraw -> Yetersiz bakiye
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"103"]
+             Body = {"ownerName":"Test-ed540326-5858-4a5a-a341-46b3ee46ede3","accountType":"STANDARD","initialBalance":0.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":10,"accountNumber":"8751125319","ownerName":"Test-ed540326-5858-4a5a-a341-46b3ee46ede3","balance":0.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.318261","updatedAt":"2026-11-25T15:25:16.318261"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/8751125319/close
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#close(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":10,"accountNumber":"8751125319","ownerName":"Test-ed540326-5858-4a5a-a341-46b3ee46ede3","balance":0.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.318261","updatedAt":"2026-11-25T15:25:16.320612"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/8751125319
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":10,"accountNumber":"8751125319","ownerName":"Test-ed540326-5858-4a5a-a341-46b3ee46ede3","balance":0.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.318261","updatedAt":"2026-11-25T15:25:16.320612"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/8751125319/withdraw
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"14"]
+             Body = {"amount":1.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#withdraw(String, WithdrawRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = tr.edu.sakarya.bil002.exception.InsufficientBalanceException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 422
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"timestamp":"2026-11-25T15:25:16.324105","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/8751125319/withdraw"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/8751125319
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":10,"accountNumber":"8751125319","ownerName":"Test-ed540326-5858-4a5a-a341-46b3ee46ede3","balance":0.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.318261","updatedAt":"2026-11-25T15:25:16.320612"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.329+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2618987389 (STANDARD)
+2026-11-25T15:25:16.338+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=2618987389, tip=TRANSFER, tutar=25.0
+2026-11-25T15:25:16.338+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=2618987389, tip=TRANSFER, tutar=25.0
+2026-11-25T15:25:16.338+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 2618987389 -> 2618987389, tutar=25.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-b2a3bb8d-a553-4f3f-a2f4-b273d3fa9fc9","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":11,"accountNumber":"2618987389","ownerName":"Test-b2a3bb8d-a553-4f3f-a2f4-b273d3fa9fc9","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.328654","updatedAt":"2026-11-25T15:25:16.328654"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/2618987389
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":11,"accountNumber":"2618987389","ownerName":"Test-b2a3bb8d-a553-4f3f-a2f4-b273d3fa9fc9","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.328654","updatedAt":"2026-11-25T15:25:16.328654"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/2618987389
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":11,"accountNumber":"2618987389","ownerName":"Test-b2a3bb8d-a553-4f3f-a2f4-b273d3fa9fc9","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.328654","updatedAt":"2026-11-25T15:25:16.328654"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/transactions/transfer
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"67"]
+             Body = {"amount":25.0,"toAccount":"2618987389","fromAccount":"2618987389"}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.TransactionController
+           Method = tr.edu.sakarya.bil002.controller.TransactionController#transfer(TransferRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"fromAccount":"2618987389","toAccount":"2618987389","amount":25.0,"message":"Transfer başarılı"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/2618987389
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":11,"accountNumber":"2618987389","ownerName":"Test-b2a3bb8d-a553-4f3f-a2f4-b273d3fa9fc9","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.328654","updatedAt":"2026-11-25T15:25:16.328654"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/2618987389
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":11,"accountNumber":"2618987389","ownerName":"Test-b2a3bb8d-a553-4f3f-a2f4-b273d3fa9fc9","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.328654","updatedAt":"2026-11-25T15:25:16.328654"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.347+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6285675478 (STANDARD)
+2026-11-25T15:25:16.348+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1861580214 (STANDARD)
+2026-11-25T15:25:16.350+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 1861580214
+2026-11-25T15:25:16.356+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=6285675478, tip=TRANSFER, tutar=25.0
+2026-11-25T15:25:16.356+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1861580214, tip=TRANSFER, tutar=25.0
+2026-11-25T15:25:16.356+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 6285675478 -> 1861580214, tutar=25.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-239fe1ef-014e-4aac-aa00-c3975de84657","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":12,"accountNumber":"6285675478","ownerName":"Test-239fe1ef-014e-4aac-aa00-c3975de84657","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.346617","updatedAt":"2026-11-25T15:25:16.346617"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"103"]
+             Body = {"ownerName":"Test-46320d28-4cfc-4612-bd95-4770dcc63ecb","accountType":"STANDARD","initialBalance":0.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":13,"accountNumber":"1861580214","ownerName":"Test-46320d28-4cfc-4612-bd95-4770dcc63ecb","balance":0.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.348368","updatedAt":"2026-11-25T15:25:16.348368"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/1861580214/freeze
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#freeze(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":13,"accountNumber":"1861580214","ownerName":"Test-46320d28-4cfc-4612-bd95-4770dcc63ecb","balance":0.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.348368","updatedAt":"2026-11-25T15:25:16.350528"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/6285675478
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":12,"accountNumber":"6285675478","ownerName":"Test-239fe1ef-014e-4aac-aa00-c3975de84657","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.346617","updatedAt":"2026-11-25T15:25:16.346617"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/1861580214
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":13,"accountNumber":"1861580214","ownerName":"Test-46320d28-4cfc-4612-bd95-4770dcc63ecb","balance":0.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.348368","updatedAt":"2026-11-25T15:25:16.350528"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/transactions/transfer
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"67"]
+             Body = {"amount":25.0,"toAccount":"1861580214","fromAccount":"6285675478"}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.TransactionController
+           Method = tr.edu.sakarya.bil002.controller.TransactionController#transfer(TransferRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"fromAccount":"6285675478","toAccount":"1861580214","amount":25.0,"message":"Transfer başarılı"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/6285675478
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":12,"accountNumber":"6285675478","ownerName":"Test-239fe1ef-014e-4aac-aa00-c3975de84657","balance":75.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.346617","updatedAt":"2026-11-25T15:25:16.356605"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/1861580214
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":13,"accountNumber":"1861580214","ownerName":"Test-46320d28-4cfc-4612-bd95-4770dcc63ecb","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.348368","updatedAt":"2026-11-25T15:25:16.356647"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.365+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6092300512 (STANDARD)
+2026-11-25T15:25:16.367+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9861633645 (STANDARD)
+2026-11-25T15:25:16.369+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 9861633645
+2026-11-25T15:25:16.375+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=6092300512, tip=TRANSFER, tutar=25.0
+2026-11-25T15:25:16.376+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=9861633645, tip=TRANSFER, tutar=25.0
+2026-11-25T15:25:16.376+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 6092300512 -> 9861633645, tutar=25.0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"105"]
+             Body = {"ownerName":"Test-b6838b71-6f18-4ee1-a282-bf073dd965bb","accountType":"STANDARD","initialBalance":100.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":14,"accountNumber":"6092300512","ownerName":"Test-b6838b71-6f18-4ee1-a282-bf073dd965bb","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.364774","updatedAt":"2026-11-25T15:25:16.364774"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"103"]
+             Body = {"ownerName":"Test-0ecc7978-b909-45ef-aaa7-1ed80dfa1119","accountType":"STANDARD","initialBalance":0.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":15,"accountNumber":"9861633645","ownerName":"Test-0ecc7978-b909-45ef-aaa7-1ed80dfa1119","balance":0.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.366799","updatedAt":"2026-11-25T15:25:16.366799"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/9861633645/close
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#close(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":15,"accountNumber":"9861633645","ownerName":"Test-0ecc7978-b909-45ef-aaa7-1ed80dfa1119","balance":0.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.366799","updatedAt":"2026-11-25T15:25:16.369476"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/6092300512
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":14,"accountNumber":"6092300512","ownerName":"Test-b6838b71-6f18-4ee1-a282-bf073dd965bb","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.364774","updatedAt":"2026-11-25T15:25:16.364774"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/9861633645
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":15,"accountNumber":"9861633645","ownerName":"Test-0ecc7978-b909-45ef-aaa7-1ed80dfa1119","balance":0.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.366799","updatedAt":"2026-11-25T15:25:16.369476"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/transactions/transfer
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"67"]
+             Body = {"amount":25.0,"toAccount":"9861633645","fromAccount":"6092300512"}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.TransactionController
+           Method = tr.edu.sakarya.bil002.controller.TransactionController#transfer(TransferRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"fromAccount":"6092300512","toAccount":"9861633645","amount":25.0,"message":"Transfer başarılı"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/6092300512
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":14,"accountNumber":"6092300512","ownerName":"Test-b6838b71-6f18-4ee1-a282-bf073dd965bb","balance":75.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.364774","updatedAt":"2026-11-25T15:25:16.37624"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/9861633645
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":15,"accountNumber":"9861633645","ownerName":"Test-0ecc7978-b909-45ef-aaa7-1ed80dfa1119","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.366799","updatedAt":"2026-11-25T15:25:16.37628"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.384+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8268896910 (STANDARD)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"68"]
+             Body = {"ownerName":"Test","accountType":"STANDARD","initialBalance":-0.01}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":16,"accountNumber":"8268896910","ownerName":"Test","balance":-0.01,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.384311","updatedAt":"2026-11-25T15:25:16.384311"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.388+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7288972596 (STANDARD)
+2026-11-25T15:25:16.392+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 7288972596
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"104"]
+             Body = {"ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","accountType":"STANDARD","initialBalance":25.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.388413"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/7288972596
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.388413"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/7288972596/close
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#close(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.392263"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/7288972596
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.392263"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.399+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1314942920 (STANDARD)
+2026-11-25T15:25:16.401+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 1314942920
+2026-11-25T15:25:16.404+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 1314942920
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"104"]
+             Body = {"ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","accountType":"STANDARD","initialBalance":25.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.398425"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/1314942920/freeze
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#freeze(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/1314942920
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/1314942920/freeze
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#freeze(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/1314942920
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-11-25T15:25:16.409+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9625508686 (STANDARD)
+2026-11-25T15:25:16.411+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 9625508686
+2026-11-25T15:25:16.414+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 9625508686
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"104"]
+             Body = {"ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","accountType":"STANDARD","initialBalance":25.0}
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#createAccount(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.408948"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/9625508686/freeze
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#freeze(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.411398"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/9625508686
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.411398"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/accounts/9625508686/close
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#close(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.414843"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/accounts/9625508686
+       Parameters = {}
+          Headers = [Accept:"application/json"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tr.edu.sakarya.bil002.controller.AccountController
+           Method = tr.edu.sakarya.bil002.controller.AccountController#getAccount(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.414843"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 17, Failures: 17, Errors: 0, Skipped: 0, Time elapsed: 0.285 s <<< FAILURE! -- in tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.bva_04 -- Time elapsed: 0.067 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"} ==> expected: <400> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.rejected(BankApi.java:92)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.bva_04(BlackBoxContract.java:97)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"} ==> expected: <400> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$5(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.bva_15 -- Time elapsed: 0.012 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.21648","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/3024079048/withdraw"} ==> expected: <200> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.bva_15(BlackBoxContract.java:164)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.bva_18 -- Time elapsed: 0.019 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.238374","status":422,"error":"Unprocessable Entity","message":"GÃ¼nlÃ¼k Ã§ekim limiti aÅÄ±ldÄ±: 20000.0 TL","path":"/api/accounts/1378541277/withdraw"} ==> expected: <200> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.bva_18(BlackBoxContract.java:189)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.his_02 -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.his_02(BlackBoxContract.java:456)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.his_03 -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.his_03(BlackBoxContract.java:468)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.int_01 -- Time elapsed: 0.010 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1002.5> but was: <1002.0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.int_01(BlackBoxContract.java:338)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.int_02 -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1004.17> but was: <1004.0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.int_02(BlackBoxContract.java:351)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.int_04 -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2510.92> but was: <2510.5>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.int_04(BlackBoxContract.java:376)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_x02 -- Time elapsed: 0.012 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":99.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.312575"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <99.0>
+	at tr.edu.sakarya.bil002.support.BankApi.rejected(BankApi.java:92)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_x02(BlackBoxContract.java:405)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":99.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.312575"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$5(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <99.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$6(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_x05 -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.324105","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/8751125319/withdraw"} ==> expected: <409> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.rejected(BankApi.java:92)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_x05(BlackBoxContract.java:424)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.324105","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/8751125319/withdraw"} ==> expected: <409> but was: <422>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$5(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.dt_02 -- Time elapsed: 0.017 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"2618987389","toAccount":"2618987389","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <400> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransfer(BankApi.java:103)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.dt_02(BlackBoxContract.java:273)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"2618987389","toAccount":"2618987389","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <400> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$9(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.dt_06 -- Time elapsed: 0.017 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6285675478","toAccount":"1861580214","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransfer(BankApi.java:103)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.dt_06(BlackBoxContract.java:298)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6285675478","toAccount":"1861580214","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$9(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$10(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$11(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.dt_07 -- Time elapsed: 0.018 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6092300512","toAccount":"9861633645","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransfer(BankApi.java:103)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.dt_07(BlackBoxContract.java:305)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6092300512","toAccount":"9861633645","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$9(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$10(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$11(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.ep_08 -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"id":16,"accountNumber":"8268896910","ownerName":"Test","balance":-0.01,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.384311","updatedAt":"2026-11-25T15:25:16.384311"} ==> expected: <400> but was: <201>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.ep_08(BlackBoxContract.java:60)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_04 -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.392263"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 state ==> expected: <ACTIVE> but was: <CLOSED>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransition(BankApi.java:97)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_04(BlackBoxContract.java:216)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.392263"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$7(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 state ==> expected: <ACTIVE> but was: <CLOSED>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:87)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$8(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_05 -- Time elapsed: 0.011 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"} ==> expected: <409> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransition(BankApi.java:97)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_05(BlackBoxContract.java:223)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$7(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[ERROR] tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_08 -- Time elapsed: 0.011 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.414843"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 state ==> expected: <FROZEN> but was: <CLOSED>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransition(BankApi.java:97)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_08(BlackBoxContract.java:242)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.414843"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$7(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 state ==> expected: <FROZEN> but was: <CLOSED>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:87)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$8(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+[INFO] Running tr.edu.sakarya.bil002.bdd.CucumberRunnerTest
+[INFO] Running io.cucumber.junit.platform.engine.CucumberTestEngine
+2026-11-25T15:25:16.660+03:00  INFO 40565 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:25:16.664+03:00  INFO 40565 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+@hata
+Scenario Outline: Faiz kuruşa yuvarlanarak eklenir               # src/test/resources/features/faiz.feature:11
+2026-11-25T15:25:16.691+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6155361376 (STANDARD)
+  Given a "STANDARD" account with balance 1000.0                 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:25:16.698+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=6155361376, tip=INTEREST, tutar=2.0
+2026-11-25T15:25:16.698+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Faiz uygulandı: hesap=6155361376, faiz=2.0
+  When the owner requests "interest"                             # tr.edu.sakarya.bil002.bdd.BankSteps.operation(java.lang.String)
+  Then the response code is 200                                  # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account balance is 1002.50 TL                          # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+      org.opentest4j.AssertionFailedError: expected: <1002.5> but was: <1002.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.balance(BankSteps.java:35)
+	at ✽.the account balance is 1002.50 TL(file://WORKSPACE/bankaccount-ready/src/test/resources/features/faiz.feature:7)
+
+  And the latest transaction is "INTEREST" with status "SUCCESS" # tr.edu.sakarya.bil002.bdd.BankSteps.latest(java.lang.String,java.lang.String)
+2026-11-25T15:25:16.711+03:00  INFO 40565 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:25:16.712+03:00  INFO 40565 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+@hata
+Scenario Outline: Faiz kuruşa yuvarlanarak eklenir               # src/test/resources/features/faiz.feature:12
+2026-11-25T15:25:16.718+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5656481697 (PREMIUM)
+  Given a "PREMIUM" account with balance 1000.0                  # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:25:16.724+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5656481697, tip=INTEREST, tutar=4.0
+2026-11-25T15:25:16.724+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Faiz uygulandı: hesap=5656481697, faiz=4.0
+  When the owner requests "interest"                             # tr.edu.sakarya.bil002.bdd.BankSteps.operation(java.lang.String)
+  Then the response code is 200                                  # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account balance is 1004.17 TL                          # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+      org.opentest4j.AssertionFailedError: expected: <1004.17> but was: <1004.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.balance(BankSteps.java:35)
+	at ✽.the account balance is 1004.17 TL(file://WORKSPACE/bankaccount-ready/src/test/resources/features/faiz.feature:7)
+
+  And the latest transaction is "INTEREST" with status "SUCCESS" # tr.edu.sakarya.bil002.bdd.BankSteps.latest(java.lang.String,java.lang.String)
+2026-11-25T15:25:16.733+03:00  INFO 40565 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:25:16.734+03:00  INFO 40565 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+@hata
+Scenario: Başarısız çekim FAILED olarak görünür                   # src/test/resources/features/islem_gecmisi.feature:6
+2026-11-25T15:25:16.739+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5384716110 (STANDARD)
+  Given a "STANDARD" account with balance 100.0                   # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:25:16.749+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/5384716110/withdraw -> Yetersiz bakiye
+  When the owner withdraws 100.01 TL                              # tr.edu.sakarya.bil002.bdd.BankSteps.withdraw(double)
+  Then the response code is 422                                   # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the transaction history has 1 entries                       # tr.edu.sakarya.bil002.bdd.BankSteps.history(int)
+      org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.history(BankSteps.java:43)
+	at ✽.the transaction history has 1 entries(file://WORKSPACE/bankaccount-ready/src/test/resources/features/islem_gecmisi.feature:10)
+
+  And the latest transaction is "WITHDRAWAL" with status "FAILED" # tr.edu.sakarya.bil002.bdd.BankSteps.latest(java.lang.String,java.lang.String)
+2026-11-25T15:25:16.755+03:00  INFO 40565 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:25:16.756+03:00  INFO 40565 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+@hata
+Scenario: Bakiyenin tamamı çekilebilir          # src/test/resources/features/para_cekme.feature:3
+2026-11-25T15:25:16.761+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7947319754 (STANDARD)
+  Given a "STANDARD" account with balance 100.0 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:25:16.766+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/7947319754/withdraw -> Yetersiz bakiye
+  When the owner withdraws 100.0 TL             # tr.edu.sakarya.bil002.bdd.BankSteps.withdraw(double)
+  Then the response code is 200                 # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+      org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.766919","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/7947319754/withdraw"} ==> expected: <200> but was: <422>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:563)
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.code(BankSteps.java:33)
+	at ✽.the response code is 200(file://WORKSPACE/bankaccount-ready/src/test/resources/features/para_cekme.feature:6)
+
+  And the account balance is 0.0 TL             # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+2026-11-25T15:25:16.771+03:00  INFO 40565 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:25:16.772+03:00  INFO 40565 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+@hata
+Scenario: Sıfır tutar yatırma reddedilir        # src/test/resources/features/para_yatirma.feature:14
+2026-11-25T15:25:16.777+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5059916566 (STANDARD)
+  Given a "STANDARD" account with balance 100.0 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:25:16.783+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5059916566, tip=DEPOSIT, tutar=0.0
+2026-11-25T15:25:16.784+03:00  INFO 40565 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=5059916566, tutar=0.0
+  When the owner deposits 0.0 TL                # tr.edu.sakarya.bil002.bdd.BankSteps.deposit(double)
+  Then the response code is 400                 # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+      org.opentest4j.AssertionFailedError: HTTP body: {"id":24,"accountNumber":"5059916566","ownerName":"Test-0270e6fe-ec89-49b9-8a44-4cd03410423f","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.776701","updatedAt":"2026-11-25T15:25:16.776701"} ==> expected: <400> but was: <200>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:563)
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.code(BankSteps.java:33)
+	at ✽.the response code is 400(file://WORKSPACE/bankaccount-ready/src/test/resources/features/para_yatirma.feature:17)
+
+  And the account is unchanged                  # tr.edu.sakarya.bil002.bdd.BankSteps.unchanged()
+[ERROR] Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.178 s <<< FAILURE! -- in io.cucumber.junit.platform.engine.CucumberTestEngine
+[ERROR] Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples.Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples - Example #1.1 -- Time elapsed: 0.059 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1002.5> but was: <1002.0>
+	at tr.edu.sakarya.bil002.bdd.BankSteps.balance(BankSteps.java:35)
+	at ✽.the account balance is 1002.50 TL(file://WORKSPACE/bankaccount-ready/src/test/resources/features/faiz.feature:7)
+
+[ERROR] Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples.Aylık faiz - Faiz kuruşa yuvarlanarak eklenir - Examples - Example #1.2 -- Time elapsed: 0.020 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1004.17> but was: <1004.0>
+	at tr.edu.sakarya.bil002.bdd.BankSteps.balance(BankSteps.java:35)
+	at ✽.the account balance is 1004.17 TL(file://WORKSPACE/bankaccount-ready/src/test/resources/features/faiz.feature:7)
+
+[ERROR] İşlem geçmişi.İşlem geçmişi - Başarısız çekim FAILED olarak görünür -- Time elapsed: 0.020 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at tr.edu.sakarya.bil002.bdd.BankSteps.history(BankSteps.java:43)
+	at ✽.the transaction history has 1 entries(file://WORKSPACE/bankaccount-ready/src/test/resources/features/islem_gecmisi.feature:10)
+
+[ERROR] Para çekme kuralları.Para çekme kuralları - Bakiyenin tamamı çekilebilir -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.766919","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/7947319754/withdraw"} ==> expected: <200> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.code(BankSteps.java:33)
+	at ✽.the response code is 200(file://WORKSPACE/bankaccount-ready/src/test/resources/features/para_cekme.feature:6)
+
+[ERROR] Para yatırma kuralları.Para yatırma kuralları - Sıfır tutar yatırma reddedilir -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"id":24,"accountNumber":"5059916566","ownerName":"Test-0270e6fe-ec89-49b9-8a44-4cd03410423f","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.776701","updatedAt":"2026-11-25T15:25:16.776701"} ==> expected: <400> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.bdd.BankSteps.code(BankSteps.java:33)
+	at ✽.the response code is 400(file://WORKSPACE/bankaccount-ready/src/test/resources/features/para_yatirma.feature:17)
+
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.380 s -- in tr.edu.sakarya.bil002.bdd.CucumberRunnerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   expected: <1002.5> but was: <1002.0>
+[ERROR]   expected: <1004.17> but was: <1004.0>
+[ERROR]   HTTP body: {"id":24,"accountNumber":"5059916566","ownerName":"Test-0270e6fe-ec89-49b9-8a44-4cd03410423f","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.776701","updatedAt":"2026-11-25T15:25:16.776701"} ==> expected: <400> but was: <200>
+[ERROR]   HTTP body: {"timestamp":"2026-11-25T15:25:16.766919","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/7947319754/withdraw"} ==> expected: <200> but was: <422>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.bva_04:97 Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"} ==> expected: <400> but was: <200>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.bva_15:164 HTTP body: {"timestamp":"2026-11-25T15:25:16.21648","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/3024079048/withdraw"} ==> expected: <200> but was: <422>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.bva_18:189 HTTP body: {"timestamp":"2026-11-25T15:25:16.238374","status":422,"error":"Unprocessable Entity","message":"GÃ¼nlÃ¼k Ã§ekim limiti aÅÄ±ldÄ±: 20000.0 TL","path":"/api/accounts/1378541277/withdraw"} ==> expected: <200> but was: <422>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.dt_02:273 Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"2618987389","toAccount":"2618987389","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <400> but was: <200>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.dt_06:298 Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6285675478","toAccount":"1861580214","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.dt_07:305 Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6092300512","toAccount":"9861633645","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.ep_08:60 HTTP body: {"id":16,"accountNumber":"8268896910","ownerName":"Test","balance":-0.01,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.384311","updatedAt":"2026-11-25T15:25:16.384311"} ==> expected: <400> but was: <201>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.his_02:456 expected: <1> but was: <0>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.his_03:468 expected: <1> but was: <0>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.int_01:338 expected: <1002.5> but was: <1002.0>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.int_02:351 expected: <1004.17> but was: <1004.0>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.int_04:376 expected: <2510.92> but was: <2510.5>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.st_04:216 Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.392263"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 state ==> expected: <ACTIVE> but was: <CLOSED>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.st_05:223 Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"} ==> expected: <409> but was: <200>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.st_08:242 Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.414843"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 state ==> expected: <FROZEN> but was: <CLOSED>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.st_x02:405 Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":99.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.312575"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <99.0>
+[ERROR]   AccountServiceBlackBoxTest>BlackBoxContract.st_x05:424 Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.324105","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/8751125319/withdraw"} ==> expected: <409> but was: <422>
+[ERROR]   AccountControllerIntegrationTest>EndpointContract.api_01:18 HTTP body: null ==> expected: <404> but was: <200>
+[ERROR]   HistoryRepositoryIntegrationTest.dailyTotalExcludesPreviousCalendarDay:40 expected: <25.0> but was: <125.0>
+[ERROR]   HistoryRepositoryIntegrationTest.rejectedWithdrawalMustHaveFailedHistoryRecord:47 expected: <1> but was: <0>
+[ERROR]   AccountServiceWhiteBoxTest.closePositiveBalanceRejected:305 Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+[ERROR]   AccountServiceWhiteBoxTest.freezeAlreadyFrozenRejected:269 Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+[ERROR]   AccountServiceWhiteBoxTest.frozenWithdrawalRejected:190 Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+[ERROR]   AccountServiceWhiteBoxTest.monthlyInterestWB53:311 expected: <1002.5> but was: <1002.0>
+[ERROR]   AccountServiceWhiteBoxTest.monthlyInterestWB54:317 expected: <1004.17> but was: <1004.0>
+[ERROR]   AccountServiceWhiteBoxTest.monthlyInterestWB55:323 expected: <2510.92> but was: <2510.5>
+[ERROR]   AccountServiceWhiteBoxTest.negativeInitialBalanceRejected:71 Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+[ERROR]   AccountServiceWhiteBoxTest.sameAccountTransferRejected:243 Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+[ERROR]   AccountServiceWhiteBoxTest.transferTargetCLOSED:237 Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+[ERROR]   AccountServiceWhiteBoxTest.transferTargetFROZEN:231 Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+[ERROR]   AccountServiceWhiteBoxTest.zeroDepositRejected:102 Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+[ERROR]   TransactionServiceWhiteBoxTest.previousDayWithdrawalsMustNotConsumeTodaysLimit:58 expected: <25.0> but was: <125.0>
+[ERROR]   expected: <1> but was: <0>
+[ERROR] Errors: 
+[ERROR]   AccountServiceWhiteBoxTest.fullBalanceWithdrawalAllowed:158 » InsufficientBalance Yetersiz bakiye
+[ERROR]   AccountServiceWhiteBoxTest.premiumDailyEqualityAllowed:179 » LimitExceeded Günlük çekim limiti aşıldı: 20000.0 TL
+[INFO] 
+[ERROR] Tests run: 56, Failures: 37, Errors: 2, Skipped: 17
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.615 s
+[INFO] Finished at: 2026-11-25T15:25:17+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project bankaccount-api: There are test failures.
+[ERROR] 
+[ERROR] Please refer to WORKSPACE/bankaccount-ready/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

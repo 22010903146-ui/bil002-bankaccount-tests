@@ -1,0 +1,478 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< tr.edu.sakarya.bil002:bankaccount-api >----------------
+[INFO] Building bankaccount-api 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ bankaccount-api ---
+[INFO] argLine set to -javaagent:WORKSPACE/work/maven-cache/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=WORKSPACE/bankaccount-ready/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bankaccount-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bankaccount-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bankaccount-api ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bankaccount-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ bankaccount-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+Nov 25, 2026 3:23:42 PM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+
+This is a work around for the limited JUnit 5 support in Maven and Gradle. Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors. For details see: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+If you are using the JUnit 5 Suite Engine, Platform Launcher API or Console Launcher you should not use this property. Please consult the JUnit 5 documentation on test selection.
+[INFO] Running tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest
+15:23:53.943 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap oluşturuldu: 7324990835 (PREMIUM)
+15:23:53.967 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Faiz uygulandı: hesap=1234567890, faiz=0.0
+15:23:53.971 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap donduruldu: 1234567890
+15:23:53.977 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Para yatırıldı: hesap=1234567890, tutar=50000.0
+15:23:53.979 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap aktifleştirildi: 1234567890
+15:23:53.986 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap kapatıldı: 1234567890
+15:23:53.987 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Para yatırıldı: hesap=1234567890, tutar=10000.0
+15:23:53.988 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap kapatıldı: 1234567890
+15:23:53.989 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Para çekildi: hesap=1234567890, tutar=0.01
+15:23:53.992 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Transfer tamamlandı: 1234567890 -> 2234567890, tutar=100.0
+15:23:53.994 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Para çekildi: hesap=1234567890, tutar=500.0
+15:23:54.006 [main] INFO tr.edu.sakarya.bil002.service.AccountService -- Hesap oluşturuldu: 1340311017 (STANDARD)
+[INFO] Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.16 s -- in tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest
+[INFO] Running tr.edu.sakarya.bil002.whitebox.TransactionServiceWhiteBoxTest
+15:23:54.041 [main] INFO tr.edu.sakarya.bil002.service.TransactionService -- İşlem kaydedildi: hesap=1234567890, tip=DEPOSIT, tutar=25.0
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in tr.edu.sakarya.bil002.whitebox.TransactionServiceWhiteBoxTest
+[INFO] Running tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest
+15:23:54.122 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest]: HistoryRepositoryIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:23:54.199 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-11-25T15:23:54.444+03:00  INFO 40167 --- [bankaccount-api] [           main] e.s.b.i.HistoryRepositoryIntegrationTest : Starting HistoryRepositoryIntegrationTest using Java 17.0.21.1 with PID 40167 (started by abdulrahman in WORKSPACE/bankaccount-ready)
+2026-11-25T15:23:54.444+03:00  INFO 40167 --- [bankaccount-api] [           main] e.s.b.i.HistoryRepositoryIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T15:23:54.807+03:00  INFO 40167 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-25T15:23:54.838+03:00  INFO 40167 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.
+2026-11-25T15:23:55.073+03:00  INFO 40167 --- [bankaccount-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-25T15:23:55.118+03:00  INFO 40167 --- [bankaccount-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-11-25T15:23:55.155+03:00  INFO 40167 --- [bankaccount-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-25T15:23:55.381+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-25T15:23:55.405+03:00  INFO 40167 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-25T15:23:55.591+03:00  INFO 40167 --- [bankaccount-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bankdb user=SA
+2026-11-25T15:23:55.592+03:00  INFO 40167 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-25T15:23:56.182+03:00  INFO 40167 --- [bankaccount-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-25T15:23:56.205+03:00  INFO 40167 --- [bankaccount-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25T15:23:56.686+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bankdb'
+2026-11-25T15:23:56.718+03:00  INFO 40167 --- [bankaccount-api] [           main] e.s.b.i.HistoryRepositoryIntegrationTest : Started HistoryRepositoryIntegrationTest in 2.423 seconds (process running for 14.583)
+2026-11-25T15:23:56.788+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8770970902 (STANDARD)
+2026-11-25T15:23:56.789+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1953721637 (STANDARD)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.838 s -- in tr.edu.sakarya.bil002.integration.HistoryRepositoryIntegrationTest
+[INFO] Running tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+2026-11-25T15:23:56.892+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest]: AccountControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:56.895+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-11-25T15:23:56.908+03:00  INFO 40167 --- [bankaccount-api] [           main] e.s.b.i.AccountControllerIntegrationTest : Starting AccountControllerIntegrationTest using Java 17.0.21.1 with PID 40167 (started by abdulrahman in WORKSPACE/bankaccount-ready)
+2026-11-25T15:23:56.909+03:00  INFO 40167 --- [bankaccount-api] [           main] e.s.b.i.AccountControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T15:23:56.971+03:00  INFO 40167 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-25T15:23:56.977+03:00  INFO 40167 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2026-11-25T15:23:57.019+03:00  INFO 40167 --- [bankaccount-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-25T15:23:57.020+03:00  INFO 40167 --- [bankaccount-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-25T15:23:57.024+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-25T15:23:57.025+03:00  INFO 40167 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-25T15:23:57.025+03:00  INFO 40167 --- [bankaccount-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:bankdb user=SA
+2026-11-25T15:23:57.025+03:00  INFO 40167 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-25T15:23:57.053+03:00  INFO 40167 --- [bankaccount-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-25T15:23:57.057+03:00  INFO 40167 --- [bankaccount-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25T15:23:57.138+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bankdb'
+2026-11-25T15:23:57.154+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-25T15:23:57.155+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-25T15:23:57.155+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-25T15:23:57.161+03:00  INFO 40167 --- [bankaccount-api] [           main] e.s.b.i.AccountControllerIntegrationTest : Started AccountControllerIntegrationTest in 0.263 seconds (process running for 15.025)
+2026-11-25T15:23:57.248+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/deposit -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.277+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/withdraw -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.281+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/freeze -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.285+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/unfreeze -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.293+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/close -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.296+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/interest -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.302+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/transactions -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.310+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2668282384 (STANDARD)
+2026-11-25T15:23:57.325+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5466449619 (STANDARD)
+2026-11-25T15:23:57.332+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts/5466449619/deposit -> amount: Tutar (amount) zorunludur
+2026-11-25T15:23:57.338+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts -> İstek gövdesi okunamadı veya geçersiz JSON
+2026-11-25T15:23:57.342+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6357642938 (STANDARD)
+2026-11-25T15:23:57.350+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/transactions/transfer -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.356+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/transactions/0000000000 -> Hesap bulunamadı: 0000000000
+2026-11-25T15:23:57.359+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5674712624 (STANDARD)
+2026-11-25T15:23:57.364+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5674712624, tip=DEPOSIT, tutar=1.0
+2026-11-25T15:23:57.364+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=5674712624, tutar=1.0
+2026-11-25T15:23:57.382+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9602506402 (STANDARD)
+2026-11-25T15:23:57.384+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1432808389 (STANDARD)
+2026-11-25T15:23:57.388+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/transactions/transfer -> amount: Tutar (amount) zorunludur
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.503 s -- in tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+[INFO] Running tr.edu.sakarya.bil002.blackbox.LiveAcceptanceTest
+[WARNING] Tests run: 48, Failures: 0, Errors: 0, Skipped: 48, Time elapsed: 0.001 s -- in tr.edu.sakarya.bil002.blackbox.LiveAcceptanceTest
+[INFO] Running tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+2026-11-25T15:23:57.400+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest]: AccountServiceBlackBoxTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:57.405+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+2026-11-25T15:23:57.409+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9504198225 (STANDARD)
+2026-11-25T15:23:57.416+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2419798276 (STANDARD)
+2026-11-25T15:23:57.421+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3116545083 (STANDARD)
+2026-11-25T15:23:57.425+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts/3116545083/deposit -> Yatırılacak tutar sıfırdan büyük olmalıdır
+2026-11-25T15:23:57.431+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3353129282 (STANDARD)
+2026-11-25T15:23:57.434+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=3353129282, tip=DEPOSIT, tutar=0.01
+2026-11-25T15:23:57.434+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=3353129282, tutar=0.01
+2026-11-25T15:23:57.440+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4998808027 (STANDARD)
+2026-11-25T15:23:57.444+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts/4998808027/withdraw -> Çekilecek tutar sıfırdan büyük olmalıdır
+2026-11-25T15:23:57.449+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6217662820 (STANDARD)
+2026-11-25T15:23:57.453+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts/6217662820/withdraw -> Çekilecek tutar sıfırdan büyük olmalıdır
+2026-11-25T15:23:57.458+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9559140967 (STANDARD)
+2026-11-25T15:23:57.461+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=9559140967, tip=WITHDRAWAL, tutar=0.01
+2026-11-25T15:23:57.461+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=9559140967, tutar=0.01
+2026-11-25T15:23:57.467+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5125711398 (STANDARD)
+2026-11-25T15:23:57.469+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5125711398, tip=DEPOSIT, tutar=9999.99
+2026-11-25T15:23:57.469+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=5125711398, tutar=9999.99
+2026-11-25T15:23:57.475+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1136464693 (STANDARD)
+2026-11-25T15:23:57.477+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1136464693, tip=DEPOSIT, tutar=10000.0
+2026-11-25T15:23:57.477+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=1136464693, tutar=10000.0
+2026-11-25T15:23:57.482+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2679900935 (STANDARD)
+2026-11-25T15:23:57.485+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/2679900935/deposit -> Tek seferlik para yatırma limiti aşıldı: 10000.0 TL
+2026-11-25T15:23:57.490+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2404776874 (PREMIUM)
+2026-11-25T15:23:57.492+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=2404776874, tip=DEPOSIT, tutar=49999.99
+2026-11-25T15:23:57.492+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=2404776874, tutar=49999.99
+2026-11-25T15:23:57.497+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1967089620 (PREMIUM)
+2026-11-25T15:23:57.500+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1967089620, tip=DEPOSIT, tutar=50000.0
+2026-11-25T15:23:57.500+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=1967089620, tutar=50000.0
+2026-11-25T15:23:57.505+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2646359770 (PREMIUM)
+2026-11-25T15:23:57.508+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/2646359770/deposit -> Tek seferlik para yatırma limiti aşıldı: 50000.0 TL
+2026-11-25T15:23:57.512+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9051940048 (STANDARD)
+2026-11-25T15:23:57.515+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/9051940048/withdraw -> Yetersiz bakiye
+2026-11-25T15:23:57.520+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1227256514 (STANDARD)
+2026-11-25T15:23:57.523+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1227256514, tip=WITHDRAWAL, tutar=4999.99
+2026-11-25T15:23:57.523+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=1227256514, tutar=4999.99
+2026-11-25T15:23:57.526+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1227256514, tip=WITHDRAWAL, tutar=0.01
+2026-11-25T15:23:57.526+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=1227256514, tutar=0.01
+2026-11-25T15:23:57.531+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/1227256514/withdraw -> Günlük çekim limiti aşıldı: 5000.0 TL
+2026-11-25T15:23:57.536+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4401348477 (STANDARD)
+2026-11-25T15:23:57.539+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=4401348477, tip=DEPOSIT, tutar=20.0
+2026-11-25T15:23:57.539+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=4401348477, tutar=20.0
+2026-11-25T15:23:57.542+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=4401348477, tip=WITHDRAWAL, tutar=5.0
+2026-11-25T15:23:57.542+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=4401348477, tutar=5.0
+2026-11-25T15:23:57.549+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4125281053 (STANDARD)
+2026-11-25T15:23:57.550+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7534554634 (PREMIUM)
+2026-11-25T15:23:57.553+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=4125281053, tip=TRANSFER, tutar=25.0
+2026-11-25T15:23:57.554+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=7534554634, tip=TRANSFER, tutar=25.0
+2026-11-25T15:23:57.554+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 4125281053 -> 7534554634, tutar=25.0
+2026-11-25T15:23:57.564+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2787298278 (STANDARD)
+2026-11-25T15:23:57.567+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/2787298278/withdraw -> Yetersiz bakiye
+2026-11-25T15:23:57.571+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=2787298278, tip=WITHDRAWAL, tutar=5000.0
+2026-11-25T15:23:57.571+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=2787298278, tutar=5000.0
+2026-11-25T15:23:57.578+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3730661209 (STANDARD)
+2026-11-25T15:23:57.581+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=3730661209, tip=INTEREST, tutar=30.0
+2026-11-25T15:23:57.581+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Faiz uygulandı: hesap=3730661209, faiz=30.0
+2026-11-25T15:23:57.589+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9812052331 (STANDARD)
+2026-11-25T15:23:57.592+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=9812052331, tip=INTEREST, tutar=0.0
+2026-11-25T15:23:57.592+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Faiz uygulandı: hesap=9812052331, faiz=0.0
+2026-11-25T15:23:57.599+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2690372524 (STANDARD)
+2026-11-25T15:23:57.601+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 2690372524
+2026-11-25T15:23:57.605+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/2690372524/deposit -> Hesap aktif değil: 2690372524 (FROZEN)
+2026-11-25T15:23:57.609+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7568488459 (STANDARD)
+2026-11-25T15:23:57.611+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 7568488459
+2026-11-25T15:23:57.614+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/7568488459/interest -> Hesap aktif değil: 7568488459 (FROZEN)
+2026-11-25T15:23:57.618+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3902865387 (STANDARD)
+2026-11-25T15:23:57.620+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 3902865387
+2026-11-25T15:23:57.623+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/3902865387/deposit -> Hesap aktif değil: 3902865387 (CLOSED)
+2026-11-25T15:23:57.627+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9480637836 (STANDARD)
+2026-11-25T15:23:57.628+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 9480637836
+2026-11-25T15:23:57.631+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/9480637836/interest -> Hesap aktif değil: 9480637836 (CLOSED)
+2026-11-25T15:23:57.636+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9883064212 (STANDARD)
+2026-11-25T15:23:57.637+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7860306459 (STANDARD)
+2026-11-25T15:23:57.640+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=9883064212, tip=TRANSFER, tutar=25.0
+2026-11-25T15:23:57.640+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=7860306459, tip=TRANSFER, tutar=25.0
+2026-11-25T15:23:57.640+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 9883064212 -> 7860306459, tutar=25.0
+2026-11-25T15:23:57.646+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6704249663 (STANDARD)
+2026-11-25T15:23:57.647+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7792160993 (STANDARD)
+2026-11-25T15:23:57.652+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/transactions/transfer -> Gönderen hesabın bakiyesi yetersiz
+2026-11-25T15:23:57.657+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8067108301 (STANDARD)
+2026-11-25T15:23:57.658+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1014561342 (STANDARD)
+2026-11-25T15:23:57.659+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 8067108301
+2026-11-25T15:23:57.664+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/transactions/transfer -> Gönderen hesap aktif değil: 8067108301
+2026-11-25T15:23:57.669+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5373682733 (STANDARD)
+2026-11-25T15:23:57.670+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6751923620 (STANDARD)
+2026-11-25T15:23:57.672+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 5373682733
+2026-11-25T15:23:57.677+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/transactions/transfer -> Gönderen hesap aktif değil: 5373682733
+2026-11-25T15:23:57.682+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5038638538 (STANDARD)
+2026-11-25T15:23:57.683+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6887497491 (STANDARD)
+2026-11-25T15:23:57.687+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/transactions/transfer -> Transfer tutarı sıfırdan büyük olmalıdır
+2026-11-25T15:23:57.692+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4897395605 (STANDARD)
+2026-11-25T15:23:57.693+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3629599276 (STANDARD)
+2026-11-25T15:23:57.696+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/transactions/transfer -> Transfer tutarı sıfırdan büyük olmalıdır
+2026-11-25T15:23:57.701+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2618475434 (STANDARD)
+2026-11-25T15:23:57.702+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8377587445 (STANDARD)
+2026-11-25T15:23:57.705+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=2618475434, tip=TRANSFER, tutar=100.0
+2026-11-25T15:23:57.705+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=8377587445, tip=TRANSFER, tutar=100.0
+2026-11-25T15:23:57.705+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 2618475434 -> 8377587445, tutar=100.0
+2026-11-25T15:23:57.710+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6172368801 (STANDARD)
+2026-11-25T15:23:57.711+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1466153000 (STANDARD)
+2026-11-25T15:23:57.714+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=6172368801, tip=WITHDRAWAL, tutar=5000.0
+2026-11-25T15:23:57.714+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=6172368801, tutar=5000.0
+2026-11-25T15:23:57.716+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=6172368801, tip=TRANSFER, tutar=6000.0
+2026-11-25T15:23:57.717+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=1466153000, tip=TRANSFER, tutar=6000.0
+2026-11-25T15:23:57.717+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 6172368801 -> 1466153000, tutar=6000.0
+2026-11-25T15:23:57.722+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts -> Hesap sahibi adı boş olamaz
+2026-11-25T15:23:57.724+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts -> Hesap sahibi adı boş olamaz
+2026-11-25T15:23:57.726+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts -> Hesap sahibi adı boş olamaz
+2026-11-25T15:23:57.727+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts -> Hesap türü STANDARD veya PREMIUM olmalıdır
+2026-11-25T15:23:57.729+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts -> Hesap türü STANDARD veya PREMIUM olmalıdır
+2026-11-25T15:23:57.730+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [400] /api/accounts -> Hesap türü STANDARD veya PREMIUM olmalıdır
+2026-11-25T15:23:57.733+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9966957940 (STANDARD)
+2026-11-25T15:23:57.738+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2441061176 (STANDARD)
+2026-11-25T15:23:57.743+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3953969928 (STANDARD)
+2026-11-25T15:23:57.746+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5316640225 (STANDARD)
+2026-11-25T15:23:57.750+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2624381530 (STANDARD)
+2026-11-25T15:23:57.753+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8915427690 (STANDARD)
+2026-11-25T15:23:57.756+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8478122055 (STANDARD)
+2026-11-25T15:23:57.759+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9098480506 (STANDARD)
+2026-11-25T15:23:57.762+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9582576119 (STANDARD)
+2026-11-25T15:23:57.765+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6308346516 (STANDARD)
+2026-11-25T15:23:57.769+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 1655046376 (STANDARD)
+2026-11-25T15:23:57.774+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8565854257 (STANDARD)
+2026-11-25T15:23:57.775+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 8565854257
+2026-11-25T15:23:57.780+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9323755923 (STANDARD)
+2026-11-25T15:23:57.782+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/9323755923/unfreeze -> Sadece dondurulmuş hesaplar aktifleştirilebilir
+2026-11-25T15:23:57.787+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4064853625 (STANDARD)
+2026-11-25T15:23:57.788+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 4064853625
+2026-11-25T15:23:57.792+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5683364540 (STANDARD)
+2026-11-25T15:23:57.793+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 5683364540
+2026-11-25T15:23:57.795+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap aktifleştirildi: 5683364540
+2026-11-25T15:23:57.800+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2412817821 (STANDARD)
+2026-11-25T15:23:57.801+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 2412817821
+2026-11-25T15:23:57.803+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 2412817821
+2026-11-25T15:23:57.807+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7332609371 (STANDARD)
+2026-11-25T15:23:57.808+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 7332609371
+2026-11-25T15:23:57.810+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/7332609371/freeze -> Kapalı hesap dondurulamaz
+2026-11-25T15:23:57.815+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 6783060180 (STANDARD)
+2026-11-25T15:23:57.816+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 6783060180
+2026-11-25T15:23:57.819+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/6783060180/unfreeze -> Sadece dondurulmuş hesaplar aktifleştirilebilir
+2026-11-25T15:23:57.823+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2241638690 (STANDARD)
+2026-11-25T15:23:57.825+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 2241638690
+2026-11-25T15:23:57.827+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/2241638690/close -> Hesap zaten kapalı
+[INFO] Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.431 s -- in tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+[INFO] Running tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest
+2026-11-25T15:23:57.832+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest]: SummaryOriginalServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:57.836+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest
+2026-11-25T15:23:57.839+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5751717103 (STANDARD)
+2026-11-25T15:23:57.840+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5751717103, tip=DEPOSIT, tutar=25.0
+2026-11-25T15:23:57.840+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=5751717103, tutar=25.0
+2026-11-25T15:23:57.843+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5751717103, tip=WITHDRAWAL, tutar=5.0
+2026-11-25T15:23:57.843+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=5751717103, tutar=5.0
+2026-11-25T15:23:57.844+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 5751717103
+2026-11-25T15:23:57.856+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/summary -> Hesap bulunamadı: 0000000000
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest
+[INFO] Running tr.edu.sakarya.bil002.summary.SummaryControllerTest
+2026-11-25T15:23:57.866+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-25T15:23:57.866+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-25T15:23:57.866+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-25T15:23:57.870+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-25T15:23:57.870+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-25T15:23:57.870+03:00  INFO 40167 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tr.edu.sakarya.bil002.summary.SummaryControllerTest
+[INFO] Running tr.edu.sakarya.bil002.summary.SummaryCalculatorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tr.edu.sakarya.bil002.summary.SummaryCalculatorTest
+[INFO] Running tr.edu.sakarya.bil002.bdd.CucumberRunnerTest
+[INFO] Running io.cucumber.junit.platform.engine.CucumberTestEngine
+2026-11-25T15:23:58.140+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.143+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Dondurulmuş hesaba faiz uygulanmaz    # src/test/resources/features/faiz.feature:13
+2026-11-25T15:23:58.168+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 7521984939 (STANDARD)
+  Given a "STANDARD" account with balance 100.0 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.171+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 7521984939
+  And the account is "FROZEN"                   # tr.edu.sakarya.bil002.bdd.BankSteps.state(java.lang.String)
+2026-11-25T15:23:58.175+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/7521984939/interest -> Hesap aktif değil: 7521984939 (FROZEN)
+  When the owner requests "interest"            # tr.edu.sakarya.bil002.bdd.BankSteps.operation(java.lang.String)
+  Then the response code is 409                 # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account is unchanged                  # tr.edu.sakarya.bil002.bdd.BankSteps.unchanged()
+2026-11-25T15:23:58.182+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.182+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Dondurma ve çözme bakiyeyi korur     # src/test/resources/features/hesap_durumu.feature:2
+2026-11-25T15:23:58.187+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4545252507 (STANDARD)
+  Given a "STANDARD" account with balance 25.0 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.190+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 4545252507
+  When the owner requests "freeze"             # tr.edu.sakarya.bil002.bdd.BankSteps.operation(java.lang.String)
+  Then the response code is 200                # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account state is "FROZEN"            # tr.edu.sakarya.bil002.bdd.BankSteps.accountState(java.lang.String)
+  And the account balance is 25.0 TL           # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+2026-11-25T15:23:58.195+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap aktifleştirildi: 4545252507
+  When the owner requests "unfreeze"           # tr.edu.sakarya.bil002.bdd.BankSteps.operation(java.lang.String)
+  Then the response code is 200                # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account state is "ACTIVE"            # tr.edu.sakarya.bil002.bdd.BankSteps.accountState(java.lang.String)
+  And the account balance is 25.0 TL           # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+2026-11-25T15:23:58.200+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.201+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Kapalı hesap tekrar açılamaz        # src/test/resources/features/hesap_durumu.feature:12
+2026-11-25T15:23:58.206+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5768889408 (STANDARD)
+  Given a "STANDARD" account with balance 0.0 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.208+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap kapatıldı: 5768889408
+  And the account is "CLOSED"                 # tr.edu.sakarya.bil002.bdd.BankSteps.state(java.lang.String)
+2026-11-25T15:23:58.213+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [409] /api/accounts/5768889408/unfreeze -> Sadece dondurulmuş hesaplar aktifleştirilebilir
+  When the owner requests "unfreeze"          # tr.edu.sakarya.bil002.bdd.BankSteps.operation(java.lang.String)
+  Then the response code is 409               # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account is unchanged                # tr.edu.sakarya.bil002.bdd.BankSteps.unchanged()
+2026-11-25T15:23:58.217+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.218+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Hesap açılışı kayıt üretmez           # src/test/resources/features/islem_gecmisi.feature:2
+2026-11-25T15:23:58.222+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4694174259 (STANDARD)
+  Given a "STANDARD" account with balance 100.0 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+  Then the transaction history has 0 entries    # tr.edu.sakarya.bil002.bdd.BankSteps.history(int)
+2026-11-25T15:23:58.226+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.227+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Geçerli miktarda para yatırma            # src/test/resources/features/ornek_senaryo.feature:7
+2026-11-25T15:23:58.230+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9793299526 (STANDARD)
+  Given aktif bir hesap mevcut ve bakiyesi 1000 TL # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.aktifBirHesapMevcut(int)
+2026-11-25T15:23:58.232+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=9793299526, tip=DEPOSIT, tutar=500.0
+2026-11-25T15:23:58.232+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=9793299526, tutar=500.0
+  When hesaba 500 TL yatırılır                     # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.hesabaParaYatirilir(int)
+  Then bakiye 1500 TL olmalı                       # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.bakiyeOlmali(int)
+  And işlem geçmişinde DEPOSIT kaydı bulunmalı     # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.islemGecmisindeKayitBulunmali(java.lang.String)
+2026-11-25T15:23:58.236+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.236+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Dondurulmuş hesaba para yatırma girişimi # src/test/resources/features/ornek_senaryo.feature:13
+2026-11-25T15:23:58.239+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 2060279616 (STANDARD)
+2026-11-25T15:23:58.240+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 2060279616
+  Given dondurulmuş bir hesap mevcut               # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.dondurulmusBirHesapMevcut()
+  When hesaba 100 TL yatırılmaya çalışılır         # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.hesabaParaYatirilmayaCalisilir(int)
+  Then işlem reddedilmeli                          # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.islemReddedilmeli()
+  And bakiye değişmemeli                           # tr.edu.sakarya.bil002.bdd.ParaYatirmaAdimlari.bakiyeDegismemeli()
+2026-11-25T15:23:58.246+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.247+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Birikimli günlük limit aşılmaz         # src/test/resources/features/para_cekme.feature:8
+2026-11-25T15:23:58.250+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8982216774 (STANDARD)
+  Given a "STANDARD" account with balance 6000.0 # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.255+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=8982216774, tip=WITHDRAWAL, tutar=4999.99
+2026-11-25T15:23:58.255+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=8982216774, tutar=4999.99
+  When the owner withdraws 4999.99 TL            # tr.edu.sakarya.bil002.bdd.BankSteps.withdraw(double)
+  Then the response code is 200                  # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+2026-11-25T15:23:58.259+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=8982216774, tip=WITHDRAWAL, tutar=0.01
+2026-11-25T15:23:58.259+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=8982216774, tutar=0.01
+  When the owner withdraws 0.01 TL               # tr.edu.sakarya.bil002.bdd.BankSteps.withdraw(double)
+  Then the response code is 200                  # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+2026-11-25T15:23:58.263+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/8982216774/withdraw -> Günlük çekim limiti aşıldı: 5000.0 TL
+  When the owner withdraws 0.01 TL               # tr.edu.sakarya.bil002.bdd.BankSteps.withdraw(double)
+  Then the response code is 422                  # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account is unchanged                   # tr.edu.sakarya.bil002.bdd.BankSteps.unchanged()
+2026-11-25T15:23:58.267+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.268+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario Outline: Hesap türüne göre yatırma limiti # src/test/resources/features/para_yatirma.feature:9
+2026-11-25T15:23:58.271+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4488259982 (STANDARD)
+  Given a "STANDARD" account with balance 0.0      # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.275+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=4488259982, tip=DEPOSIT, tutar=10000.0
+2026-11-25T15:23:58.275+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=4488259982, tutar=10000.0
+  When the owner deposits 10000.0 TL               # tr.edu.sakarya.bil002.bdd.BankSteps.deposit(double)
+  Then the response code is 200                    # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account balance is 10000.0 TL            # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+2026-11-25T15:23:58.278+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.279+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario Outline: Hesap türüne göre yatırma limiti # src/test/resources/features/para_yatirma.feature:10
+2026-11-25T15:23:58.282+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 8660052377 (STANDARD)
+  Given a "STANDARD" account with balance 0.0      # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.285+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/8660052377/deposit -> Tek seferlik para yatırma limiti aşıldı: 10000.0 TL
+  When the owner deposits 10000.01 TL              # tr.edu.sakarya.bil002.bdd.BankSteps.deposit(double)
+  Then the response code is 422                    # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account balance is 0.0 TL                # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+2026-11-25T15:23:58.288+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.289+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario Outline: Hesap türüne göre yatırma limiti # src/test/resources/features/para_yatirma.feature:11
+2026-11-25T15:23:58.292+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 3655577579 (PREMIUM)
+  Given a "PREMIUM" account with balance 0.0       # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.295+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=3655577579, tip=DEPOSIT, tutar=50000.0
+2026-11-25T15:23:58.295+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=3655577579, tutar=50000.0
+  When the owner deposits 50000.0 TL               # tr.edu.sakarya.bil002.bdd.BankSteps.deposit(double)
+  Then the response code is 200                    # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account balance is 50000.0 TL            # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+2026-11-25T15:23:58.300+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.300+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario Outline: Hesap türüne göre yatırma limiti # src/test/resources/features/para_yatirma.feature:12
+2026-11-25T15:23:58.304+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4979014832 (PREMIUM)
+  Given a "PREMIUM" account with balance 0.0       # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.308+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/accounts/4979014832/deposit -> Tek seferlik para yatırma limiti aşıldı: 50000.0 TL
+  When the owner deposits 50000.01 TL              # tr.edu.sakarya.bil002.bdd.BankSteps.deposit(double)
+  Then the response code is 422                    # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account balance is 0.0 TL                # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+2026-11-25T15:23:58.312+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.314+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Bakiyenin tamamı aktarılabilir          # src/test/resources/features/transfer.feature:2
+2026-11-25T15:23:58.318+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 4729299583 (STANDARD)
+  Given a "STANDARD" account with balance 100.0   # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.320+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 9297468926 (STANDARD)
+  And an active target account with balance 0.0   # tr.edu.sakarya.bil002.bdd.BankSteps.target(double)
+2026-11-25T15:23:58.325+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=4729299583, tip=TRANSFER, tutar=100.0
+2026-11-25T15:23:58.325+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=9297468926, tip=TRANSFER, tutar=100.0
+2026-11-25T15:23:58.325+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Transfer tamamlandı: 4729299583 -> 9297468926, tutar=100.0
+  When the owner transfers 100.0 TL to the target # tr.edu.sakarya.bil002.bdd.BankSteps.transfer(double)
+  Then the response code is 200                   # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account balance is 0.0 TL               # tr.edu.sakarya.bil002.bdd.BankSteps.balance(double)
+  And the target balance is 100.0 TL              # tr.edu.sakarya.bil002.bdd.BankSteps.targetBalance(double)
+2026-11-25T15:23:58.331+03:00  INFO 40167 --- [bankaccount-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration]: CucumberSpringConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-25T15:23:58.332+03:00  INFO 40167 --- [bankaccount-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.bdd.CucumberSpringConfiguration
+
+Scenario: Yetersiz bakiye iki hesabı da korur      # src/test/resources/features/transfer.feature:9
+2026-11-25T15:23:58.335+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5045995715 (STANDARD)
+  Given a "STANDARD" account with balance 100.0    # tr.edu.sakarya.bil002.bdd.BankSteps.account(java.lang.String,double)
+2026-11-25T15:23:58.336+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5124814722 (STANDARD)
+  And an active target account with balance 50.0   # tr.edu.sakarya.bil002.bdd.BankSteps.target(double)
+2026-11-25T15:23:58.339+03:00  INFO 40167 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [422] /api/transactions/transfer -> Gönderen hesabın bakiyesi yetersiz
+  When the owner transfers 100.01 TL to the target # tr.edu.sakarya.bil002.bdd.BankSteps.transfer(double)
+  Then the response code is 422                    # tr.edu.sakarya.bil002.bdd.BankSteps.code(int)
+  And the account is unchanged                     # tr.edu.sakarya.bil002.bdd.BankSteps.unchanged()
+  And the target balance is 50.0 TL                # tr.edu.sakarya.bil002.bdd.BankSteps.targetBalance(double)
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.253 s -- in io.cucumber.junit.platform.engine.CucumberTestEngine
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.476 s -- in tr.edu.sakarya.bil002.bdd.CucumberRunnerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 185, Failures: 0, Errors: 0, Skipped: 48
+[INFO] 
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ bankaccount-api ---
+[INFO] Loading execution data file WORKSPACE/bankaccount-ready/target/jacoco.exec
+[INFO] Analyzed bundle 'bankaccount-api' with 25 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17.439 s
+[INFO] Finished at: 2026-11-25T15:23:58+03:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,14 @@
+{
+  "red": {
+    "original": "678b31c7fd0e81287164f87e61136b8194d03ab6",
+    "current": "db4c1a8864aab44f78bdf4277df4ec7611cdddff"
+  },
+  "green": {
+    "original": "26f93c5f92feac59579c5b3852831cad3ae74345",
+    "current": "5e6d41622dc1f3bec6549d653cf7098af9b70019"
+  },
+  "refactor": {
+    "original": "88bc1f53b988ae09414bdb4126fc0ff89ee931f0",
+    "current": "a9d486fbbbe3623a76952c1b4f41fa6012d228ae"
+  }
+}

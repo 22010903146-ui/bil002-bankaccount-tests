@@ -1,0 +1,1447 @@
+{
+  "info": {
+    "name": "BIL002 BankAccount sözleşme testleri",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "deposit",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı deposit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/deposit",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"amount\": 10}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Doğru bakiye\", () => pm.expect(pm.response.json().balance).to.be.closeTo({\"deposit\":110,\"withdraw\":90,\"interest\":100.25}[\"deposit\"],0.001));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000/deposit",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"amount\": 10}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "withdraw",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı withdraw",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/withdraw",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"amount\": 10}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Doğru bakiye\", () => pm.expect(pm.response.json().balance).to.be.closeTo({\"deposit\":110,\"withdraw\":90,\"interest\":100.25}[\"withdraw\"],0.001));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000/withdraw",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"amount\": 10}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "freeze",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı freeze",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/freeze"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Doğru durum\", () => pm.expect(pm.response.json().status).to.eql(\"FROZEN\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000/freeze"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "unfreeze",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Önkoşul: dondur",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/freeze"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı unfreeze",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/unfreeze"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Doğru durum\", () => pm.expect(pm.response.json().status).to.eql(\"ACTIVE\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000/unfreeze"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "close",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 0}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı close",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/close"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Doğru durum\", () => pm.expect(pm.response.json().status).to.eql(\"CLOSED\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000/close"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "interest",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı interest",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/interest"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Doğru bakiye\", () => pm.expect(pm.response.json().balance).to.be.closeTo({\"deposit\":110,\"withdraw\":90,\"interest\":100.25}[\"interest\"],0.001));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000/interest"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "transactions",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı transactions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}/transactions"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000/transactions"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "get",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap 404",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/0000000000"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hesap açma ve listeleme",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Liste",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Dizi\", () => pm.expect(pm.response.json()).to.be.an(\"array\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Geçersiz hesap",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"\", \"accountType\": \"STANDARD\", \"initialBalance\": 0}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Transfer",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Yeni target",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 0}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"target\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Başarılı transfer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/transactions/transfer",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"fromAccount\": \"{{account}}\", \"toAccount\": \"{{target}}\", \"amount\": 25}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kaynak bakiye",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{account}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Kaynak 75\", () => pm.expect(pm.response.json().balance).to.be.closeTo(75,0.001));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hedef bakiye",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts/{{target}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Hedef 25\", () => pm.expect(pm.response.json().balance).to.be.closeTo(25,0.001));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Aynı hesap 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/transactions/transfer",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"fromAccount\": \"{{account}}\", \"toAccount\": \"{{account}}\", \"amount\": 1}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hedef 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/transactions/transfer",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"fromAccount\": \"{{account}}\", \"toAccount\": \"0000000000\", \"amount\": 1}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alternatif geçmiş",
+      "item": [
+        {
+          "name": "Yeni account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/accounts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ownerName\": \"BIL002-demo\", \"accountType\": \"STANDARD\", \"initialBalance\": 100}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "if (pm.response.code === 201) pm.environment.set(\"account\", pm.response.json().accountNumber);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Boş geçmiş",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/transactions/{{account}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+                  "pm.test(\"Boş dizi\", () => pm.expect(pm.response.json()).to.eql([]));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Olmayan hesap",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "url": "{{baseUrl}}/api/transactions/0000000000"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"JSON response\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

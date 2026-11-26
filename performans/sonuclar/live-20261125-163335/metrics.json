@@ -1,0 +1,13 @@
+{
+  "samples": 10110,
+  "mean_ms": 180.697,
+  "p90_ms": 238.0,
+  "throughput_per_second": 168.36,
+  "error_percent": 0.0,
+  "sample_window_seconds": 60.05,
+  "percentile_method": "nearest-rank",
+  "labels": [
+    "deposit",
+    "balance"
+  ]
+}

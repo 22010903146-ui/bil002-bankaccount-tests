@@ -1,0 +1,17 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< tr.edu.sakarya.bil002:bankaccount-api >----------------
+[INFO] Building bankaccount-api 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.4.0:check (default-cli) @ bankaccount-api ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.815 s
+[INFO] Finished at: 2026-11-25T15:25:18+03:00
+[INFO] ------------------------------------------------------------------------

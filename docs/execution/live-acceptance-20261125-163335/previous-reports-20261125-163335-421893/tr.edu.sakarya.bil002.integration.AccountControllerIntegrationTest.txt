@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.363 s <<< FAILURE! -- in tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest
+tr.edu.sakarya.bil002.integration.AccountControllerIntegrationTest.api_01 -- Time elapsed: 0.068 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: null ==> expected: <404> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+	at tr.edu.sakarya.bil002.integration.EndpointContract.api_01(EndpointContract.java:18)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

@@ -1,0 +1,346 @@
+-------------------------------------------------------------------------------
+Test set: tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 17, Errors: 0, Skipped: 0, Time elapsed: 0.285 s <<< FAILURE! -- in tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.bva_04 -- Time elapsed: 0.067 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"} ==> expected: <400> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.rejected(BankApi.java:92)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.bva_04(BlackBoxContract.java:97)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":1,"accountNumber":"6750763603","ownerName":"Test-f08bf0cf-a0d2-42a0-9952-a5e9956f2f3e","balance":100.0,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.169393","updatedAt":"2026-11-25T15:25:16.169393"} ==> expected: <400> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$5(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.bva_15 -- Time elapsed: 0.012 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.21648","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/3024079048/withdraw"} ==> expected: <200> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.bva_15(BlackBoxContract.java:164)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.bva_18 -- Time elapsed: 0.019 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.238374","status":422,"error":"Unprocessable Entity","message":"GÃ¼nlÃ¼k Ã§ekim limiti aÅÄ±ldÄ±: 20000.0 TL","path":"/api/accounts/1378541277/withdraw"} ==> expected: <200> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.bva_18(BlackBoxContract.java:189)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.his_02 -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.his_02(BlackBoxContract.java:456)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.his_03 -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.his_03(BlackBoxContract.java:468)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.int_01 -- Time elapsed: 0.010 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1002.5> but was: <1002.0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.int_01(BlackBoxContract.java:338)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.int_02 -- Time elapsed: 0.015 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1004.17> but was: <1004.0>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.int_02(BlackBoxContract.java:351)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.int_04 -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2510.92> but was: <2510.5>
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.int_04(BlackBoxContract.java:376)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_x02 -- Time elapsed: 0.012 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":99.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.312575"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <99.0>
+	at tr.edu.sakarya.bil002.support.BankApi.rejected(BankApi.java:92)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_x02(BlackBoxContract.java:405)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":9,"accountNumber":"1886811407","ownerName":"Test-aa4607b1-6084-46e7-9bf5-9aec7c94e021","balance":99.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.305189","updatedAt":"2026-11-25T15:25:16.312575"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$5(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <99.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$6(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_x05 -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.324105","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/8751125319/withdraw"} ==> expected: <409> but was: <422>
+	at tr.edu.sakarya.bil002.support.BankApi.rejected(BankApi.java:92)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_x05(BlackBoxContract.java:424)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"timestamp":"2026-11-25T15:25:16.324105","status":422,"error":"Unprocessable Entity","message":"Yetersiz bakiye","path":"/api/accounts/8751125319/withdraw"} ==> expected: <409> but was: <422>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejected$5(BankApi.java:92)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.dt_02 -- Time elapsed: 0.017 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"2618987389","toAccount":"2618987389","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <400> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransfer(BankApi.java:103)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.dt_02(BlackBoxContract.java:273)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"2618987389","toAccount":"2618987389","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <400> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$9(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.dt_06 -- Time elapsed: 0.017 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6285675478","toAccount":"1861580214","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransfer(BankApi.java:103)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.dt_06(BlackBoxContract.java:298)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6285675478","toAccount":"1861580214","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$9(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$10(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$11(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.dt_07 -- Time elapsed: 0.018 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6092300512","toAccount":"9861633645","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+	org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransfer(BankApi.java:103)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.dt_07(BlackBoxContract.java:305)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"fromAccount":"6092300512","toAccount":"9861633645","amount":25.0,"message":"Transfer baÅarÄ±lÄ±"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$9(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <100.0> but was: <75.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$10(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 balance ==> expected: <0.0> but was: <25.0>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:86)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransfer$11(BankApi.java:103)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.ep_08 -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: HTTP body: {"id":16,"accountNumber":"8268896910","ownerName":"Test","balance":-0.01,"status":"ACTIVE","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.384311","updatedAt":"2026-11-25T15:25:16.384311"} ==> expected: <400> but was: <201>
+	at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+	at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.ep_08(BlackBoxContract.java:60)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_04 -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.392263"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 state ==> expected: <ACTIVE> but was: <CLOSED>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransition(BankApi.java:97)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_04(BlackBoxContract.java:216)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":17,"accountNumber":"7288972596","ownerName":"Test-e25abf6f-ade4-462e-a5fb-f58db9ce1501","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.388413","updatedAt":"2026-11-25T15:25:16.392263"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$7(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 state ==> expected: <ACTIVE> but was: <CLOSED>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:87)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$8(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_05 -- Time elapsed: 0.011 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"} ==> expected: <409> but was: <200>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransition(BankApi.java:97)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_05(BlackBoxContract.java:223)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":18,"accountNumber":"1314942920","ownerName":"Test-05aa020c-897b-44d3-aea1-56af27b3828a","balance":25.0,"status":"FROZEN","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.398425","updatedAt":"2026-11-25T15:25:16.401174"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$7(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+
+tr.edu.sakarya.bil002.blackbox.AccountServiceBlackBoxTest.st_08 -- Time elapsed: 0.011 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: HTTP body: {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.414843"} ==> expected: <409> but was: <200>
+	org.opentest4j.AssertionFailedError: G-4 state ==> expected: <FROZEN> but was: <CLOSED>
+	at tr.edu.sakarya.bil002.support.BankApi.rejectedTransition(BankApi.java:97)
+	at tr.edu.sakarya.bil002.blackbox.BlackBoxContract.st_08(BlackBoxContract.java:242)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: HTTP body: {"id":19,"accountNumber":"9625508686","ownerName":"Test-831484fa-1ac7-4090-a520-15304134635d","balance":25.0,"status":"CLOSED","accountType":"STANDARD","createdAt":"2026-11-25T15:25:16.408948","updatedAt":"2026-11-25T15:25:16.414843"} ==> expected: <409> but was: <200>
+		at tr.edu.sakarya.bil002.support.BankApi.code(BankApi.java:73)
+		at tr.edu.sakarya.bil002.support.BankApi.error(BankApi.java:76)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$7(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+	Suppressed: org.opentest4j.AssertionFailedError: G-4 state ==> expected: <FROZEN> but was: <CLOSED>
+		at tr.edu.sakarya.bil002.support.BankApi.unchanged(BankApi.java:87)
+		at tr.edu.sakarya.bil002.support.BankApi.lambda$rejectedTransition$8(BankApi.java:97)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		... 5 more
+

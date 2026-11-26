@@ -1,0 +1,16 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< tr.edu.sakarya.bil002:bankaccount-api >----------------
+[INFO] Building bankaccount-api 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (default-cli) @ bankaccount-api ---
+[INFO] Loading execution data file WORKSPACE/bankaccount-ready/target/jacoco.exec
+[INFO] Analyzed bundle 'bankaccount-api' with 25 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.384 s
+[INFO] Finished at: 2026-11-25T15:25:19+03:00
+[INFO] ------------------------------------------------------------------------

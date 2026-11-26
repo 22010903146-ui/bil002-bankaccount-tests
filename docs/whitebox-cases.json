@@ -1,0 +1,302 @@
+[
+  {
+    "id": "WB-01",
+    "name": "nullOwnerRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-02",
+    "name": "blankOwnerRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-03",
+    "name": "nullTypeRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-04",
+    "name": "unknownTypeRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-05",
+    "name": "standardNullBalanceAndTrim",
+    "finding": null
+  },
+  {
+    "id": "WB-06",
+    "name": "premiumPositiveBalance",
+    "finding": null
+  },
+  {
+    "id": "WB-07",
+    "name": "negativeInitialBalanceRejected",
+    "finding": "H-01"
+  },
+  {
+    "id": "WB-08",
+    "name": "findPresentAndAbsent",
+    "finding": null
+  },
+  {
+    "id": "WB-09",
+    "name": "getMissingAccount",
+    "finding": null
+  },
+  {
+    "id": "WB-10",
+    "name": "getAllAccountsDelegates",
+    "finding": null
+  },
+  {
+    "id": "WB-11",
+    "name": "nullDeposit",
+    "finding": null
+  },
+  {
+    "id": "WB-12",
+    "name": "negativeDeposit",
+    "finding": null
+  },
+  {
+    "id": "WB-13",
+    "name": "zeroDepositRejected",
+    "finding": "H-02"
+  },
+  {
+    "id": "WB-14",
+    "name": "depositFROZEN",
+    "finding": null
+  },
+  {
+    "id": "WB-15",
+    "name": "depositCLOSED",
+    "finding": null
+  },
+  {
+    "id": "WB-16",
+    "name": "depositAtLimitSTANDARD",
+    "finding": null
+  },
+  {
+    "id": "WB-17",
+    "name": "depositAtLimitPREMIUM",
+    "finding": null
+  },
+  {
+    "id": "WB-18",
+    "name": "depositOverLimitSTANDARD",
+    "finding": null
+  },
+  {
+    "id": "WB-19",
+    "name": "depositOverLimitPREMIUM",
+    "finding": null
+  },
+  {
+    "id": "WB-20",
+    "name": "nullWithdrawal",
+    "finding": null
+  },
+  {
+    "id": "WB-21",
+    "name": "zeroWithdrawal",
+    "finding": null
+  },
+  {
+    "id": "WB-22",
+    "name": "negativeWithdrawal",
+    "finding": null
+  },
+  {
+    "id": "WB-23",
+    "name": "insufficientWithdrawal",
+    "finding": null
+  },
+  {
+    "id": "WB-24",
+    "name": "fullBalanceWithdrawalAllowed",
+    "finding": "H-03"
+  },
+  {
+    "id": "WB-25",
+    "name": "standardDailyExcess",
+    "finding": null
+  },
+  {
+    "id": "WB-26",
+    "name": "standardDailyEqualityAllowed",
+    "finding": null
+  },
+  {
+    "id": "WB-27",
+    "name": "premiumDailyExcess",
+    "finding": null
+  },
+  {
+    "id": "WB-28",
+    "name": "premiumDailyEqualityAllowed",
+    "finding": "H-04"
+  },
+  {
+    "id": "WB-29",
+    "name": "premiumBelowDailyLimit",
+    "finding": null
+  },
+  {
+    "id": "WB-30",
+    "name": "frozenWithdrawalRejected",
+    "finding": "H-10"
+  },
+  {
+    "id": "WB-31",
+    "name": "nullTransfer",
+    "finding": null
+  },
+  {
+    "id": "WB-32",
+    "name": "zeroTransfer",
+    "finding": null
+  },
+  {
+    "id": "WB-33",
+    "name": "negativeTransfer",
+    "finding": null
+  },
+  {
+    "id": "WB-34",
+    "name": "missingTransferSource",
+    "finding": null
+  },
+  {
+    "id": "WB-35",
+    "name": "missingTransferTarget",
+    "finding": null
+  },
+  {
+    "id": "WB-36",
+    "name": "transferSourceFROZEN",
+    "finding": null
+  },
+  {
+    "id": "WB-37",
+    "name": "transferSourceCLOSED",
+    "finding": null
+  },
+  {
+    "id": "WB-38",
+    "name": "transferTargetFROZEN",
+    "finding": "H-08"
+  },
+  {
+    "id": "WB-39",
+    "name": "transferTargetCLOSED",
+    "finding": "H-08"
+  },
+  {
+    "id": "WB-40",
+    "name": "sameAccountTransferRejected",
+    "finding": "H-07"
+  },
+  {
+    "id": "WB-41",
+    "name": "insufficientTransferKeepsBothAccounts",
+    "finding": null
+  },
+  {
+    "id": "WB-42",
+    "name": "fullTransferMaintainsTotalAndTwoRecords",
+    "finding": null
+  },
+  {
+    "id": "WB-43",
+    "name": "freezeActiveKeepsBalance",
+    "finding": null
+  },
+  {
+    "id": "WB-44",
+    "name": "freezeClosedRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-45",
+    "name": "freezeAlreadyFrozenRejected",
+    "finding": "H-06"
+  },
+  {
+    "id": "WB-46",
+    "name": "unfreezeFrozenKeepsBalance",
+    "finding": null
+  },
+  {
+    "id": "WB-47",
+    "name": "unfreezeACTIVERejected",
+    "finding": null
+  },
+  {
+    "id": "WB-48",
+    "name": "unfreezeCLOSEDRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-49",
+    "name": "closeZeroBalanceACTIVE",
+    "finding": null
+  },
+  {
+    "id": "WB-50",
+    "name": "closeZeroBalanceFROZEN",
+    "finding": null
+  },
+  {
+    "id": "WB-51",
+    "name": "closeAlreadyClosedRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-52",
+    "name": "closePositiveBalanceRejected",
+    "finding": "H-05"
+  },
+  {
+    "id": "WB-53",
+    "name": "monthlyInterestWB53",
+    "finding": "H-09"
+  },
+  {
+    "id": "WB-54",
+    "name": "monthlyInterestWB54",
+    "finding": "H-09"
+  },
+  {
+    "id": "WB-55",
+    "name": "monthlyInterestWB55",
+    "finding": "H-09"
+  },
+  {
+    "id": "WB-56",
+    "name": "zeroInterestStillRecorded",
+    "finding": null
+  },
+  {
+    "id": "WB-57",
+    "name": "interestFROZENRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-58",
+    "name": "interestCLOSEDRejected",
+    "finding": null
+  },
+  {
+    "id": "WB-59",
+    "name": "historyRequiresExistingAccount",
+    "finding": null
+  },
+  {
+    "id": "WB-60",
+    "name": "historyAvailableForFrozenAccount",
+    "finding": null
+  }
+]

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tr.edu.sakarya.bil002.summary.SummaryCalculatorTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tr.edu.sakarya.bil002.summary.SummaryCalculatorTest

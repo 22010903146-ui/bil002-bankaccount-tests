@@ -1,0 +1,8 @@
+{
+  "total": 10,
+  "failures": 0,
+  "errors": 9,
+  "skipped": 0,
+  "unsupported_summary_detected": true,
+  "maven_exit_code": 1
+}

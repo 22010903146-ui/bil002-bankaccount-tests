@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Account.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bankaccount-api</a> &gt; <a href="index.source.html" class="el_package">tr.edu.sakarya.bil002.model</a> &gt; <span class="el_source">Account.java</span></div><h1>Account.java</h1><pre class="source lang-java linenums">package tr.edu.sakarya.bil002.model;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = &quot;accounts&quot;)
+public class Account {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 10)
+    private String accountNumber;
+
+    @Column(nullable = false)
+    private String ownerName;
+
+<span class="fc" id="L30">    @Column(nullable = false)</span>
+<span class="fc" id="L31">    private Double balance = 0.0;</span>
+
+<span class="fc" id="L33">    @Enumerated(EnumType.STRING)</span>
+    @Column(nullable = false)
+    private AccountStatus status = AccountStatus.ACTIVE;
+
+    @Column(nullable = false)
+    private String accountType;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+<span class="fc" id="L44">    public Account() {</span>
+<span class="fc" id="L45">    }</span>
+
+<span class="fc" id="L47">    public Account(String accountNumber, String ownerName, String accountType, Double balance) {</span>
+<span class="fc" id="L48">        this.accountNumber = accountNumber;</span>
+<span class="fc" id="L49">        this.ownerName = ownerName;</span>
+<span class="fc" id="L50">        this.accountType = accountType;</span>
+<span class="fc" id="L51">        this.balance = balance;</span>
+<span class="fc" id="L52">    }</span>
+
+    @PrePersist
+    void onCreate() {
+<span class="fc" id="L56">        LocalDateTime now = LocalDateTime.now();</span>
+<span class="fc" id="L57">        this.createdAt = now;</span>
+<span class="fc" id="L58">        this.updatedAt = now;</span>
+<span class="fc" id="L59">    }</span>
+
+    @PreUpdate
+    void onUpdate() {
+<span class="fc" id="L63">        this.updatedAt = LocalDateTime.now();</span>
+<span class="fc" id="L64">    }</span>
+
+    public Long getId() {
+<span class="fc" id="L67">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L71">        this.id = id;</span>
+<span class="nc" id="L72">    }</span>
+
+    public String getAccountNumber() {
+<span class="fc" id="L75">        return accountNumber;</span>
+    }
+
+    public void setAccountNumber(String accountNumber) {
+<span class="nc" id="L79">        this.accountNumber = accountNumber;</span>
+<span class="nc" id="L80">    }</span>
+
+    public String getOwnerName() {
+<span class="fc" id="L83">        return ownerName;</span>
+    }
+
+    public void setOwnerName(String ownerName) {
+<span class="nc" id="L87">        this.ownerName = ownerName;</span>
+<span class="nc" id="L88">    }</span>
+
+    public Double getBalance() {
+<span class="fc" id="L91">        return balance;</span>
+    }
+
+    public void setBalance(Double balance) {
+<span class="fc" id="L95">        this.balance = balance;</span>
+<span class="fc" id="L96">    }</span>
+
+    public AccountStatus getStatus() {
+<span class="fc" id="L99">        return status;</span>
+    }
+
+    public void setStatus(AccountStatus status) {
+<span class="fc" id="L103">        this.status = status;</span>
+<span class="fc" id="L104">    }</span>
+
+    public String getAccountType() {
+<span class="fc" id="L107">        return accountType;</span>
+    }
+
+    public void setAccountType(String accountType) {
+<span class="nc" id="L111">        this.accountType = accountType;</span>
+<span class="nc" id="L112">    }</span>
+
+    public LocalDateTime getCreatedAt() {
+<span class="fc" id="L115">        return createdAt;</span>
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+<span class="nc" id="L119">        this.createdAt = createdAt;</span>
+<span class="nc" id="L120">    }</span>
+
+    public LocalDateTime getUpdatedAt() {
+<span class="fc" id="L123">        return updatedAt;</span>
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+<span class="nc" id="L127">        this.updatedAt = updatedAt;</span>
+<span class="nc" id="L128">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: tr.edu.sakarya.bil002.integration.LiveEndpointAcceptanceTest
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.31 s <<< FAILURE! -- in tr.edu.sakarya.bil002.integration.LiveEndpointAcceptanceTest
+tr.edu.sakarya.bil002.integration.LiveEndpointAcceptanceTest.api_01 -- Time elapsed: 0.785 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: G-3: expected JSON content type ==> expected: <true> but was: <false>
+	at tr.edu.sakarya.bil002.support.BankApi$HttpTransport.send(BankApi.java:124)
+	at tr.edu.sakarya.bil002.support.BankApi.send(BankApi.java:26)
+	at tr.edu.sakarya.bil002.integration.EndpointContract.api_01(EndpointContract.java:18)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

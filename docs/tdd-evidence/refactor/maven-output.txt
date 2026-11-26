@@ -1,0 +1,95 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< tr.edu.sakarya.bil002:bankaccount-api >----------------
+[INFO] Building bankaccount-api 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ bankaccount-api ---
+[INFO] argLine set to -javaagent:WORKSPACE/work/maven-cache/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=WORKSPACE/bankaccount-ready/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bankaccount-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bankaccount-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 28 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bankaccount-api ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bankaccount-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 17 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ bankaccount-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest
+15:22:23.087 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest]: SummaryOriginalServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:22:23.181 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tr.edu.sakarya.bil002.BankAccountApplication for test class tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-11-25T15:22:23.438+03:00  INFO 39682 --- [bankaccount-api] [           main] .s.SummaryOriginalServiceIntegrationTest : Starting SummaryOriginalServiceIntegrationTest using Java 17.0.21.1 with PID 39682 (started by abdulrahman in WORKSPACE/bankaccount-ready)
+2026-11-25T15:22:23.439+03:00  INFO 39682 --- [bankaccount-api] [           main] .s.SummaryOriginalServiceIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T15:22:23.821+03:00  INFO 39682 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-25T15:22:23.857+03:00  INFO 39682 --- [bankaccount-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2026-11-25T15:22:24.142+03:00  INFO 39682 --- [bankaccount-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-25T15:22:24.188+03:00  INFO 39682 --- [bankaccount-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-11-25T15:22:24.215+03:00  INFO 39682 --- [bankaccount-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-25T15:22:24.415+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-25T15:22:24.440+03:00  INFO 39682 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-25T15:22:24.637+03:00  INFO 39682 --- [bankaccount-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bankdb user=SA
+2026-11-25T15:22:24.638+03:00  INFO 39682 --- [bankaccount-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-25T15:22:25.263+03:00  INFO 39682 --- [bankaccount-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-25T15:22:25.285+03:00  INFO 39682 --- [bankaccount-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-25T15:22:25.765+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bankdb'
+2026-11-25T15:22:25.792+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-25T15:22:25.792+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-25T15:22:25.793+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-25T15:22:25.805+03:00  INFO 39682 --- [bankaccount-api] [           main] .s.SummaryOriginalServiceIntegrationTest : Started SummaryOriginalServiceIntegrationTest in 2.531 seconds (process running for 3.267)
+2026-11-25T15:22:36.641+03:00  INFO 39682 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap oluşturuldu: 5920363286 (STANDARD)
+2026-11-25T15:22:36.792+03:00  INFO 39682 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5920363286, tip=DEPOSIT, tutar=25.0
+2026-11-25T15:22:36.793+03:00  INFO 39682 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para yatırıldı: hesap=5920363286, tutar=25.0
+2026-11-25T15:22:36.804+03:00  INFO 39682 --- [bankaccount-api] [           main] t.e.s.bil002.service.TransactionService  : İşlem kaydedildi: hesap=5920363286, tip=WITHDRAWAL, tutar=5.0
+2026-11-25T15:22:36.804+03:00  INFO 39682 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Para çekildi: hesap=5920363286, tutar=5.0
+2026-11-25T15:22:36.805+03:00  INFO 39682 --- [bankaccount-api] [           main] t.e.s.bil002.service.AccountService      : Hesap donduruldu: 5920363286
+2026-11-25T15:22:36.899+03:00  INFO 39682 --- [bankaccount-api] [           main] t.e.s.b.e.GlobalExceptionHandler         : İstek reddedildi [404] /api/accounts/0000000000/summary -> Hesap bulunamadı: 0000000000
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.95 s -- in tr.edu.sakarya.bil002.summary.SummaryOriginalServiceIntegrationTest
+[INFO] Running tr.edu.sakarya.bil002.summary.SummaryControllerTest
+2026-11-25T15:22:36.918+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-25T15:22:36.918+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-25T15:22:36.918+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-25T15:22:36.922+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-25T15:22:36.922+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-25T15:22:36.923+03:00  INFO 39682 --- [bankaccount-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in tr.edu.sakarya.bil002.summary.SummaryControllerTest
+[INFO] Running tr.edu.sakarya.bil002.summary.SummaryCalculatorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tr.edu.sakarya.bil002.summary.SummaryCalculatorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ bankaccount-api ---
+[INFO] Loading execution data file WORKSPACE/bankaccount-ready/target/jacoco.exec
+[INFO] Analyzed bundle 'bankaccount-api' with 25 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.711 s
+[INFO] Finished at: 2026-11-25T15:22:37+03:00
+[INFO] ------------------------------------------------------------------------

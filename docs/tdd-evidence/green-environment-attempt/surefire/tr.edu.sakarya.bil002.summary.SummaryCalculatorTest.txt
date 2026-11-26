@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+Test set: tr.edu.sakarya.bil002.summary.SummaryCalculatorTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! -- in tr.edu.sakarya.bil002.summary.SummaryCalculatorTest
+tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.doesNotMutateHistory -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.UnsupportedOperationException: RED: summary not implemented
+	at tr.edu.sakarya.bil002.summary.SummaryCalculator.calculate(SummaryCalculator.java:11)
+	at tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.doesNotMutateHistory(SummaryCalculatorTest.java:39)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.failedAttemptsDoNotChangeTotalsButAreCounted -- Time elapsed: 0 s <<< ERROR!
+java.lang.UnsupportedOperationException: RED: summary not implemented
+	at tr.edu.sakarya.bil002.summary.SummaryCalculator.calculate(SummaryCalculator.java:11)
+	at tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.failedAttemptsDoNotChangeTotalsButAreCounted(SummaryCalculatorTest.java:24)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.exactDecimalArithmetic -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.UnsupportedOperationException: RED: summary not implemented
+	at tr.edu.sakarya.bil002.summary.SummaryCalculator.calculate(SummaryCalculator.java:11)
+	at tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.exactDecimalArithmetic(SummaryCalculatorTest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.sumsOnlySuccessfulDepositsAndWithdrawals -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.UnsupportedOperationException: RED: summary not implemented
+	at tr.edu.sakarya.bil002.summary.SummaryCalculator.calculate(SummaryCalculator.java:11)
+	at tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.sumsOnlySuccessfulDepositsAndWithdrawals(SummaryCalculatorTest.java:18)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.emptyHistory -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.UnsupportedOperationException: RED: summary not implemented
+	at tr.edu.sakarya.bil002.summary.SummaryCalculator.calculate(SummaryCalculator.java:11)
+	at tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.emptyHistory(SummaryCalculatorTest.java:13)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.interestAndTransfersAreNotCashDepositsOrWithdrawals -- Time elapsed: 0 s <<< ERROR!
+java.lang.UnsupportedOperationException: RED: summary not implemented
+	at tr.edu.sakarya.bil002.summary.SummaryCalculator.calculate(SummaryCalculator.java:11)
+	at tr.edu.sakarya.bil002.summary.SummaryCalculatorTest.interestAndTransfersAreNotCashDepositsOrWithdrawals(SummaryCalculatorTest.java:29)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

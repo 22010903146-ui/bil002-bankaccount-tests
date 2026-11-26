@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TransactionService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bankaccount-api</a> &gt; <a href="index.source.html" class="el_package">tr.edu.sakarya.bil002.service</a> &gt; <span class="el_source">TransactionService.java</span></div><h1>TransactionService.java</h1><pre class="source lang-java linenums">package tr.edu.sakarya.bil002.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import tr.edu.sakarya.bil002.model.Account;
+import tr.edu.sakarya.bil002.model.Transaction;
+import tr.edu.sakarya.bil002.model.TransactionStatus;
+import tr.edu.sakarya.bil002.model.TransactionType;
+import tr.edu.sakarya.bil002.repository.TransactionRepository;
+
+@Service
+public class TransactionService {
+
+<span class="fc" id="L19">    private static final Logger LOG = LoggerFactory.getLogger(TransactionService.class);</span>
+
+    private final TransactionRepository transactionRepository;
+
+<span class="fc" id="L23">    public TransactionService(TransactionRepository transactionRepository) {</span>
+<span class="fc" id="L24">        this.transactionRepository = transactionRepository;</span>
+<span class="fc" id="L25">    }</span>
+
+    @Transactional
+    public Transaction record(Account account, TransactionType type, double amount, String description) {
+<span class="fc" id="L29">        Transaction transaction = new Transaction(account.getAccountNumber(), type, amount, account.getBalance(),</span>
+                description, TransactionStatus.SUCCESS);
+<span class="fc" id="L31">        Transaction saved = transactionRepository.save(transaction);</span>
+<span class="fc" id="L32">        LOG.info(&quot;İşlem kaydedildi: hesap={}, tip={}, tutar={}&quot;, account.getAccountNumber(), type, amount);</span>
+<span class="fc" id="L33">        return saved;</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;Transaction&gt; getHistory(String accountNumber) {
+<span class="fc" id="L38">        return transactionRepository.findByAccountNumberOrderByTimestampDescIdDesc(accountNumber);</span>
+    }
+
+    @Transactional(readOnly = true)
+    public double getDailyWithdrawalTotal(String accountNumber) {
+<span class="fc" id="L43">        return transactionRepository</span>
+<span class="fc" id="L44">                .findByAccountNumberAndTypeAndStatus(accountNumber, TransactionType.WITHDRAWAL,</span>
+                        TransactionStatus.SUCCESS)
+<span class="fc" id="L46">                .stream()</span>
+<span class="fc" id="L47">                .mapToDouble(Transaction::getAmount)</span>
+<span class="fc" id="L48">                .sum();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

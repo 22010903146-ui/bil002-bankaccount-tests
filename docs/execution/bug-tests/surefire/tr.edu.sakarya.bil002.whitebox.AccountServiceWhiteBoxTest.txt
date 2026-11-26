@@ -1,0 +1,149 @@
+-------------------------------------------------------------------------------
+Test set: tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 11, Errors: 2, Skipped: 0, Time elapsed: 11.10 s <<< FAILURE! -- in tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.premiumDailyEqualityAllowed -- Time elapsed: 11.07 s <<< ERROR!
+tr.edu.sakarya.bil002.exception.LimitExceededException: Günlük çekim limiti aşıldı: 20000.0 TL
+	at tr.edu.sakarya.bil002.service.AccountService.checkDailyWithdrawalLimit(AccountService.java:217)
+	at tr.edu.sakarya.bil002.service.AccountService.withdraw(AccountService.java:99)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.premiumDailyEqualityAllowed(AccountServiceWhiteBoxTest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.frozenWithdrawalRejected -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.frozenWithdrawalRejected(AccountServiceWhiteBoxTest.java:190)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetCLOSED -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetCLOSED(AccountServiceWhiteBoxTest.java:237)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetFROZEN -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.transferTargetFROZEN(AccountServiceWhiteBoxTest.java:231)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.fullBalanceWithdrawalAllowed -- Time elapsed: 0.001 s <<< ERROR!
+tr.edu.sakarya.bil002.exception.InsufficientBalanceException: Yetersiz bakiye
+	at tr.edu.sakarya.bil002.service.AccountService.ensureSufficientBalance(AccountService.java:201)
+	at tr.edu.sakarya.bil002.service.AccountService.withdraw(AccountService.java:98)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.fullBalanceWithdrawalAllowed(AccountServiceWhiteBoxTest.java:158)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.zeroDepositRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.zeroDepositRejected(AccountServiceWhiteBoxTest.java:102)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.freezeAlreadyFrozenRejected -- Time elapsed: 0 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.freezeAlreadyFrozenRejected(AccountServiceWhiteBoxTest.java:269)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.negativeInitialBalanceRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.negativeInitialBalanceRejected(AccountServiceWhiteBoxTest.java:71)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.closePositiveBalanceRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected tr.edu.sakarya.bil002.exception.InvalidAccountStateException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.closePositiveBalanceRejected(AccountServiceWhiteBoxTest.java:305)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB53 -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1002.5> but was: <1002.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB53(AccountServiceWhiteBoxTest.java:311)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB54 -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1004.17> but was: <1004.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB54(AccountServiceWhiteBoxTest.java:317)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB55 -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2510.92> but was: <2510.5>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1014)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.monthlyInterestWB55(AccountServiceWhiteBoxTest.java:323)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.sameAccountTransferRejected -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at tr.edu.sakarya.bil002.whitebox.AccountServiceWhiteBoxTest.sameAccountTransferRejected(AccountServiceWhiteBoxTest.java:243)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
