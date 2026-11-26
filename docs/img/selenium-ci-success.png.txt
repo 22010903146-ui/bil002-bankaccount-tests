@@ -1,0 +1,59 @@
+Source: https://github.com/22010903146-ui/bil002-selenium-tests/actions/runs/45760073144
+
+Skip to content
+Navigation Menu
+Products
+Developers
+Businesses
+Resources
+Pricing
+Search
+/
+Sign in
+Sign up
+Dismiss alert
+22010903146-ui
+bil002-selenium-tests
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security and quality
+Insights
+Selenium Cucumber
+docs: add revised report and archived execution evidence #1
+Sign in to view logs
+Summary
+All jobs
+Loading
+Run details
+Usage
+Workflow file
+Lockfile
+Triggered via push 2 hours agoNovember 26, 2026 05:12
+22010903146-ui
+pushed
+5a7a7d8
+main
+Status
+Success
+Total duration
+1m 13s
+Artifacts
+1
+ci.yml
+on: push
+ui
+1m 10s
+ui
+Fit to window
+Zoom out
+Zoom in
+Artifacts
+Produced during runtime
+Name Size Digest
+ui-results
+282 KB
+sha256:888606ef72cdccc1cfe04be3837e520f3cd5fbb47e5246ecca6a03bc4ea280a2

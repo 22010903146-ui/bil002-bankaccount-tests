@@ -1,0 +1,77 @@
+Source: index.html
+
+Apache JMeter Dashboard
+Dashboard
+Charts
+Customs Graphs
+Test and Report information
+Source file "run.jtl"
+Start Time "11/25/26, 4:35 PM"
+End Time "11/25/26, 4:36 PM"
+Filter for display ""
+APDEX (Application Performance Index)
+Apdex
+T (Toleration threshold)
+F (Frustration threshold)
+Label
+0.992 500 ms 1 sec 500 ms Total
+0.000 500 ms 1 sec 500 ms final-ledger
+0.991 500 ms 1 sec 500 ms balance
+0.992 500 ms 1 sec 500 ms deposit
+1.000 500 ms 1 sec 500 ms Require private instance path
+1.000 500 ms 1 sec 500 ms setup-create
+Requests Summary
+FAIL
+PASS
+FAIL
+0.01%
+PASS
+99.99%
+Statistics
+Requests
+Executions
+Response Times (ms)
+Throughput
+Network (KB/sec)
+Label
+#Samples
+FAIL
+Error %
+Average
+Min
+Max
+Median
+90th pct
+95th pct
+99th pct
+Transactions/s
+Received
+Sent
+Total 10113 1 0.01% 180.75 115 2962 153.00 238.00 276.30 592.16 164.80 129.96 37.10
+balance 5039 0 0.00% 179.52 115 2962 151.00 234.00 265.00 634.20 84.59 66.59 17.26
+deposit 5071 0 0.00% 181.87 117 2859 154.00 242.00 286.00 557.28 84.45 66.73 20.78
+final-ledger 1 1 100.00% 357.00 357 357 357.00 357.00 357.00 357.00 2.80 2.22 0.57
+Require private instance path 1 0 0.00% 258.00 258 258 258.00 258.00 258.00 258.00 3.88 0.00 0.00
+setup-create 1 0 0.00% 489.00 489 489 489.00 489.00 489.00 489.00 2.04 1.62 0.59
+Errors
+Type of error
+Number of errors
+% in errors
+% in all samples
+G-5: acknowledged deposits disagree with final balance 1 100.00% 0.01%
+Top 5 Errors by sampler
+Sample
+#Samples
+#Errors
+Error
+#Errors
+Error
+#Errors
+Error
+#Errors
+Error
+#Errors
+Error
+#Errors
+Total 10113 1 G-5: acknowledged deposits disagree with final balance 1
+final-ledger 1 1 G-5: acknowledged deposits disagree with final balance 1

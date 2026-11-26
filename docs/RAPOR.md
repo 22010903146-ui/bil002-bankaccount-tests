@@ -286,6 +286,8 @@ Java HTTP testlerinin XML çıktılarında yer alır.
 
 ### 7. Performans Testi
 
+[JMeter sonuç ekranı](img/jmeter-results.png).
+
 | Senaryo | Kullanıcı | Süre | Ortalama ms | P90 ms | İstek/sn | Hata % |
 |---|---:|---:|---:|---:|---:|---:|
 | Eşzamanlı deposit + bakiye | 50 | 60 sn | 180.697 | 238.0 | 168.36 | 0.0 |
@@ -305,6 +307,8 @@ Gerçek kanıt: `performans/sonuclar/live-20261125-163335/metrics.json`, `ledger
 `run.jtl`, `html/index.html`; örnek kimliği maskelenmiştir.
 
 ### 8. CI/CD
+
+[Bank CI ekran görüntüsü](img/bank-ci-success.png) · [Selenium CI ekran görüntüsü](img/selenium-ci-success.png).
 
 Banka GitHub Actions sonucu: **success**. [Run](https://github.com/22010903146-ui/bil002-bankaccount-tests/actions/runs/45759620100); test edilen commit: `a4dfc9b98f4b51e548923d1565dd7b5e50a9e178`.
 
